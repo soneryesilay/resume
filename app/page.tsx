@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Instagram, Twitter, Youtube, Github, Linkedin } from "lucide-react"
 import { ThemeToggle } from "../components/theme-toggle"
+import MobileMenu from "@/components/MobileMenu"
 import { 
   Carousel,
   CarouselContent,
@@ -39,41 +40,8 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Mobile Menu - Hamburger and Dropdown */}
-          <div className="md:hidden">
-            <div className="relative">
-              <input
-                type="checkbox"
-                id="menu-toggle"
-                className="hidden peer"
-              />
-              <label
-                htmlFor="menu-toggle"
-                className="cursor-pointer p-2 flex flex-col justify-center items-center gap-1.5"
-              >
-                <span className="w-6 h-0.5 bg-gray-700 dark:bg-white transition-all peer-checked:rotate-45 peer-checked:translate-y-2"></span>
-                <span className="w-6 h-0.5 bg-gray-700 dark:bg-white transition-all peer-checked:opacity-0"></span>
-                <span className="w-6 h-0.5 bg-gray-700 dark:bg-white transition-all peer-checked:-rotate-45 peer-checked:-translate-y-2"></span>
-              </label>
-              
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white dark:bg-[#222] rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all">
-                {[
-                  { href: "/", label: "Home" },
-                  { href: "#projects", label: "Projects" },
-                  { href: "#experience", label: "Experience" },
-                  { href: "#contact", label: "Contact" }
-                ].map((item) => (
-                  <Link 
-                    key={item.label}
-                    href={item.href} 
-                    className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#333] hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Mobile Menu */}
+          <MobileMenu />
         </nav>
       </header>
 
