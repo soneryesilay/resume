@@ -334,7 +334,7 @@ export default function Home() {
                   <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 July</span>
                 </div>
                 <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
-                  I worked as an intern back-end developer at AkıllıPhone for 6 months, where I gained extensive hands-on experience with C# and .NET Core development. During this period, I actively contributed to various projects and significantly improved my skills in database management with MSSQL. I also had the opportunity to study and explore microservice architectures, gaining valuable insights into modern software design patterns.
+                  I worked on 3 projects using C# and .NET Core, optimized database queries for 15% better performance, and built a microservice with senior guidance. Gained practical experience through team collaboration and code reviews while contributing to the main company project.
                 </p>
                 
                 <div className="mt-4 flex gap-2 flex-wrap">
