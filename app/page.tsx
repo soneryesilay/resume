@@ -152,7 +152,7 @@ export default function Home() {
             <CarouselContent>
               <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
-                  <div className="relative h-[240px]">
+                  <div className="relative h-[360px]">
                     <Image
                       src="https://private-user-images.githubusercontent.com/122547220/410415021-8730d845-3f5d-4c44-97f6-3559f74bb9ef.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ5MDk3NjYsIm5iZiI6MTc0NDkwOTQ2NiwicGF0aCI6Ii8xMjI1NDcyMjAvNDEwNDE1MDIxLTg3MzBkODQ1LTNmNWQtNGM0NC05N2Y2LTM1NTlmNzRiYjllZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQxN1QxNzA0MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNjRmOGIyNmYyNGYxYWYxZjIyZGQwZWRiNDM2Yzc5ODNhMzM2YmFlZTgyODUxNmYyZDZlOTk0OWI2NmZhNWY3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.hpq-xSEJcqieDBnt7pwmKCZYdYoGh99EKsV65Km7mmg"
                       alt="Car Repair Reservation System"
@@ -181,7 +181,7 @@ export default function Home() {
               
               <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
-                  <div className="relative h-[240px]">
+                  <div className="relative h-[360px]">
                     <Image
                       src="https://media.licdn.com/dms/image/v2/D4D22AQFLJ8FiGD1jwA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1728481470690?e=1747872000&v=beta&t=DXsHRXYqEvPmrC-VGwgLtx4pSq_51YJ7pYqBjByb3Q8"
                       alt="Hotel API"
@@ -210,7 +210,7 @@ export default function Home() {
               
               <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
-                  <div className="relative h-[240px]">
+                  <div className="relative h-[360px]">
                     <Image
                       src="https://private-user-images.githubusercontent.com/122547220/434910188-b614f741-beeb-4c77-a774-a472f470e700.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ5MTA2MjQsIm5iZiI6MTc0NDkxMDMyNCwicGF0aCI6Ii8xMjI1NDcyMjAvNDM0OTEwMTg4LWI2MTRmNzQxLWJlZWItNGM3Ny1hNzc0LWE0NzJmNDcwZTcwMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQxN1QxNzE4NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03OTBiMmI0MDI4NTk0ZTczMDkwYTcwNDE0YjU1Y2M0YzI0ZDcyZjI0OTdhMWY3NWY3ZGZlYjgzMDg4OTUwOWVkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.gwXeemS10SAna2WBvuQA9-LK8Jq_JT6BQw9dbzDyGoY"
                       alt="Portfolio Website"
@@ -239,7 +239,7 @@ export default function Home() {
 
               <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
-                  <div className="relative h-[240px]">
+                  <div className="relative h-[360px]">
                     <Image
                       src="https://www.matillion.com/uploads/cards/Blog-API.png"
                       alt="Web API"
@@ -268,7 +268,7 @@ export default function Home() {
 
               <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
-                  <div className="relative h-[240px]">
+                  <div className="relative h-[360px]">
                     <Image
                       src="https://media.licdn.com/dms/image/v2/D4D22AQEkdV7WUggiIA/feedshare-shrink_800/B4DZQH_eXKGUAg-/0/1735300872444?e=1747872000&v=beta&t=fNVXpD0sGWFF9ZRQ46LWFYk-5QCbHOtTSOdr9seyz0w"
                       alt="Web API"
@@ -286,7 +286,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with .NET Core Web Api and MVC</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/Net-QrMenu-WithSignalR" target="_blank" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                    <Link href="https://github.com/soneryesilay/Net-QrMenu-WithSignalR" target="_blank" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -297,7 +297,7 @@ export default function Home() {
 
               <CarouselItem className="md:basis-1/2 lg:basis-1/2">
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
-                  <div className="relative h-[240px]">
+                  <div className="relative h-[360px]">
                     <Image
                       src="https://www.matillion.com/uploads/cards/Blog-API.png"
                       alt="Web API"
@@ -374,7 +374,7 @@ export default function Home() {
                 Contact
               </h2>
               
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-center max-w-2xl mx-auto text-sm">
+              <p className="text-gray-600 dark:text.gray-300 mb-6 text-center max-w-2xl mx-auto text-sm">
                 Back-End Developer with experience in C#, .NET Core, Web API, MSSQL, and AWS
               </p>
               
@@ -406,7 +406,7 @@ export default function Home() {
                 </Link>
               </div>
               
-              <p className="mt-6 text-gray-500 dark:text-gray-500 text-sm text-center">
+              <p className="mt-6 text-gray-500 dark:text.gray-500 text-sm text-center">
                 © 2025 Soner Yeşilay. All rights reserved.
               </p>
             </div>
