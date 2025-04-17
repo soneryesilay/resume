@@ -5,15 +5,15 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title: 'Soner Yeşilay Portfolio',
+  title: 'Soner Yeşilay',
   description: 'Back-End Developer Portfolio',
   icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: '/logo.svg',
+      url: '/favicon.ico',
     },
   },
 }
