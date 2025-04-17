@@ -113,7 +113,7 @@ export default function Home() {
           </h1>
         <br/>
           <p className="max-w-3xl mx-auto text-gray-400 dark:text-[#c5c5c5] mb-8 leading-relaxed">
-            Computers and software have been a passion of mine since childhood. This interest began with creating game mods and setting up servers for my friends to play on. In 2022, I was accepted into the Computer Programming program at Trakya University, where I discovered my interest in web development. I completed my internship as a Back-End Developer, during which I honed my skills in .NET technologies like C# and Object-Oriented Programming (OOP). I graduated in 2025 and am currently focused on building clean, efficient solutions with C#, .NET Core, and MSSQL. I enjoy creating reliable applications that solve real problems, with a keen interest in cloud technologies and AWS.
+          I cultivated my passion for computers and software in childhood by developing game mods and setting up servers for friends. In 2022, I enrolled in Trakya University’s Computer Programming program, where I discovered a passion for web development. As a Back‑End Developer intern, I gained hands‑on experience with .NET technologies, C#, and object‑oriented programming. Since graduating in 2025, I’ve been focused on building clean, efficient solutions with C#, .NET Core, and MSSQL, while maintaining a strong interest in cloud computing and AWS.
           </p>
 
           <div className="flex justify-center gap-4">
