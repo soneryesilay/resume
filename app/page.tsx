@@ -330,7 +330,7 @@ export default function Home() {
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between mb-2">
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">Back-end Developer - Intern at AkıllıPhone</h3>
+                  <h3 className="text-xl font-bold text-gray-300">Back-end Developer - Intern at AkıllıPhone</h3>
                   <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 July</span>
                 </div>
                 <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
@@ -470,6 +470,22 @@ export default function Home() {
                 Contact Me
               </h2>
               
+              <div className="flex items-center justify-center mb-4">
+                <div className="bg-gray-100 dark:bg-[#222222] rounded-full px-4 py-1 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-700 dark:text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-xs text-gray-700 dark:text-white">
+                    Istanbul Time: {new Date().toLocaleTimeString('en-US', { 
+                      timeZone: 'Europe/Istanbul',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                      hour12: false
+                    })}
+                  </span>
+                </div>
+              </div>
+              
               <p className="text-gray-400 dark:text.gray-300 mb-6 text-center max-w-2xl mx-auto">
               Have a question or interested in working together? Feel free to reach out! I'm always open to discussing new projects, opportunities, or simply connecting with fellow developers. Let's build something great together!              </p>
               
@@ -478,7 +494,7 @@ export default function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:soneryesilay@outlook.com" className="text-gray-700 dark:text.white hover:text-[#5badff] transition-colors">
+                  <a href="mailto:soneryesilay@outlook.com" className="text-gray-300 dark:text.white hover:text-[#5badff] transition-colors">
                     soneryesilay@outlook.com
                   </a>
                 </div>
