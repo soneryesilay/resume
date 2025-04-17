@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[360px]">
                     <Image
-                      src="https://private-user-images.githubusercontent.com/122547220/410415021-8730d845-3f5d-4c44-97f6-3559f74bb9ef.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ5MDk3NjYsIm5iZiI6MTc0NDkwOTQ2NiwicGF0aCI6Ii8xMjI1NDcyMjAvNDEwNDE1MDIxLTg3MzBkODQ1LTNmNWQtNGM0NC05N2Y2LTM1NTlmNzRiYjllZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQxN1QxNzA0MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNjRmOGIyNmYyNGYxYWYxZjIyZGQwZWRiNDM2Yzc5ODNhMzM2YmFlZTgyODUxNmYyZDZlOTk0OWI2NmZhNWY3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.hpq-xSEJcqieDBnt7pwmKCZYdYoGh99EKsV65Km7mmg"
+                      src="https://hizliresim.com/o2mp430"
                       alt="Car Repair Reservation System"
                       fill
                       className="object-cover"
@@ -199,7 +199,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[360px]">
                     <Image
-                      src="https://private-user-images.githubusercontent.com/122547220/434910188-b614f741-beeb-4c77-a774-a472f470e700.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ5MTM1MTksIm5iZiI6MTc0NDkxMzIxOSwicGF0aCI6Ii8xMjI1NDcyMjAvNDM0OTEwMTg4LWI2MTRmNzQxLWJlZWItNGM3Ny1hNzc0LWE0NzJmNDcwZTcwMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQxN1QxODA2NTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMDhiZDJiNTM1NjkwNDE2OWNiM2VlODUyNjlhMTkwODEwOTY5MDZlYmEwY2UxNmE4NGJhYTFkY2U0ODhlMzkyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Cy3lYJqMqaR-QpAmoWYsIvRJN51DUAT6Dc2xPQ2uJAc"
+                      src="https://i.hizliresim.com/b4tumam.png"
                       alt="Portfolio Website"
                       fill
                       className="object-cover"
