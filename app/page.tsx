@@ -128,7 +128,7 @@ export default function Home() {
 
         {/* Tech Stack */}
         <section className="container mx-auto py-16 px-4 text-center">
-          <h2 className="text-xl font-medium mb-10 text-gray-600 dark:text-[#8491a0]">TECH STACK</h2>
+          <h2 className="text-xl font-medium mb-10 text-gray-600 dark:text-[#8491a0]">What I Build With</h2>
           <div className="flex justify-center gap-10 flex-wrap">
             <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">C#</div>
             <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">.NET CORE</div>
@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[240px]">
                     <Image
-                      src="/projects/html-project.png"
+                      src="#"
                       alt="Car Repair Reservation System"
                       fill
                       className="object-cover"
@@ -170,7 +170,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with C# and .NET Core</p>
                     </div>
-                    <Link href="#" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
+                    <Link href="https://github.com/soneryesilay/ReservationSystem" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -183,23 +183,23 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[240px]">
                     <Image
-                      src="/projects/css-project.png"
+                      src="https://media.licdn.com/dms/image/v2/D4D22AQFLJ8FiGD1jwA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1728481470690?e=1747872000&v=beta&t=DXsHRXYqEvPmrC-VGwgLtx4pSq_51YJ7pYqBjByb3Q8"
                       alt="Hotel API"
                       fill
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                       <h3 className="text-2xl font-bold text-white">
-                        Hotel <span className="text-[#5badff]">API</span>
+                        Hotel <span className="text-[#5badff]">Management System</span>
                       </h3>
                     </div>
                   </div>
                   <div className="p-6 flex justify-between items-center">
                     <div>
-                      <p className="text-xs text-gray-500 dark:text-[#8491a0]">BACK-END PROJECT</p>
+                      <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with .NET Core and MVC</p>
                     </div>
-                    <Link href="#" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                    <Link href="https://github.com/soneryesilay/Net-HotelApi-Project" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -212,7 +212,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[240px]">
                     <Image
-                      src="/placeholder.jpg"
+                      src="/public/projects/resume.png"
                       alt="Portfolio Website"
                       fill
                       className="object-cover"
@@ -228,7 +228,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FRONT-END PROJECT</p>
                       <p className="font-bold">Built with Next.js and Tailwind CSS</p>
                     </div>
-                    <Link href="#" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
+                    <Link href="https://github.com/soneryesilay/resume" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -236,6 +236,95 @@ export default function Home() {
                   </div>
                 </div>
               </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/2">
+                <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
+                  <div className="relative h-[240px]">
+                    <Image
+                      src="https://www.matillion.com/uploads/cards/Blog-API.png"
+                      alt="Web API"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">
+                        Book Store <span className="text-[#5badff]">Web API</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="p-6 flex justify-between items-center">
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-[#8491a0]">BACK-END PROJECT</p>
+                      <p className="font-bold">Built with .NET Core Web Api</p>
+                    </div>
+                    <Link href="https://github.com/soneryesilay/BookStoreAppWebAPI" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/2">
+                <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
+                  <div className="relative h-[240px]">
+                    <Image
+                      src="https://media.licdn.com/dms/image/v2/D4D22AQEkdV7WUggiIA/feedshare-shrink_800/B4DZQH_eXKGUAg-/0/1735300872444?e=1747872000&v=beta&t=fNVXpD0sGWFF9ZRQ46LWFYk-5QCbHOtTSOdr9seyz0w"
+                      alt="Web API"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">
+                        Restaurant <span className="text-[#5badff]">Qr Menu</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="p-6 flex justify-between items-center">
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
+                      <p className="font-bold">Built with .NET Core Web Api and MVC</p>
+                    </div>
+                    <Link href="https://github.com/soneryesilay/Net-QrMenu-WithSignalR" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/2">
+                <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
+                  <div className="relative h-[240px]">
+                    <Image
+                      src="https://www.matillion.com/uploads/cards/Blog-API.png"
+                      alt="Web API"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">
+                        Iyzico 3D <span className="text-[#5badff]">Integration</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="p-6 flex justify-between items-center">
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-[#8491a0]">BACK-END PROJECT</p>
+                      <p className="font-bold">Built with .NET Core Web Api and Angular</p>
+                    </div>
+                    <Link href="https://github.com/soneryesilay/Iyzico3DPay-Angular-Net" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </CarouselItem>
+
+
             </CarouselContent>
             
             <div className="flex justify-center gap-4 mt-8">
