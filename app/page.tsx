@@ -132,7 +132,7 @@ export default function Home() {
           <div className="flex justify-center gap-10 flex-wrap">
             <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">C#</div>
             <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">.NET CORE</div>
-            <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">LINUX</div>
+            <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">MVC</div>
             <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">MSSQL</div>
             <div className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">AWS</div>
           </div>
@@ -170,7 +170,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with C# and .NET Core</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/CarRepairReservationSystem" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
+                    <Link href="https://github.com/soneryesilay/CarRepairReservationSystem" target="_blank"  className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -199,7 +199,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with .NET Core and MVC</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/Net-HotelApi-Project" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                    <Link href="https://github.com/soneryesilay/Net-HotelApi-Project" target="_blank" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -212,7 +212,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[240px]">
                     <Image
-                      src="\public\projects\resume.png"
+                      src=""
                       alt="Portfolio Website"
                       fill
                       className="object-cover"
@@ -228,7 +228,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FRONT-END PROJECT</p>
                       <p className="font-bold">Built with Next.js and Tailwind CSS</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/resume" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
+                    <Link href="https://github.com/soneryesilay/resume" target="_blank" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -257,7 +257,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">BACK-END PROJECT</p>
                       <p className="font-bold">Built with .NET Core Web Api</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/BookStoreAppWebAPI" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                    <Link href="https://github.com/soneryesilay/BookStoreAppWebAPI" target="_blank" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -286,7 +286,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with .NET Core Web Api and MVC</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/Net-QrMenu-WithSignalR" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                    <Link href="https://github.com/soneryesilay/Net-QrMenu-WithSignalR" target="_blank" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -315,7 +315,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">BACK-END PROJECT</p>
                       <p className="font-bold">Built with .NET Core Web Api and Angular</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/Iyzico3DPay-Angular-Net" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
+                    <Link href="https://github.com/soneryesilay/Iyzico3DPay-Angular-Net" target="_blank" className="w-10 h-10 rounded-full bg-[#5badff] text-white flex items-center justify-center hover:bg-[#4a9ae6] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -375,7 +375,7 @@ export default function Home() {
               </h2>
               
               <p className="text-gray-600 dark:text-gray-300 mb-6 text-center max-w-2xl mx-auto text-sm">
-                Back-End Developer with experience in C#, .NET Core, Linux, MSSQL, and AWS
+                Back-End Developer with experience in C#, .NET Core, Web API, MSSQL, and AWS
               </p>
               
               <div className="flex items-center justify-center mb-6">
