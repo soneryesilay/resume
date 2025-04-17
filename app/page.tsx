@@ -147,6 +147,8 @@ export default function Home() {
               align: "start",
               loop: true
             }}
+            autoplay={true}
+            autoplayInterval={5000}
             className="relative w-full"
           >
             <CarouselContent>
