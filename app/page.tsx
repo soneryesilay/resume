@@ -327,22 +327,23 @@ export default function Home() {
                 ].map((project, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                     <motion.div 
-                      className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden"
+                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform"
                       whileHover={{ 
                         scale: 1.03, 
-                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
+                        y: -10
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="relative h-[360px]">
+                      <div className="relative h-[360px] overflow-hidden">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover"
+                          className="object-cover transition-transform duration-700 hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                          <h3 className="text-2xl font-bold text-white">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-8">
+                          <h3 className="text-2xl font-bold text-white drop-shadow-md">
                             {project.title.split(" ").slice(0, -1).join(" ")}{" "}
                             <span style={{ color: project.accent }}>
                               {project.title.split(" ").slice(-1)}
@@ -350,16 +351,16 @@ export default function Home() {
                           </h3>
                         </div>
                       </div>
-                      <div className="p-6 flex justify-between items-center">
+                      <div className="p-8 flex justify-between items-center">
                         <div>
-                          <p className="text-xs text-gray-500 dark:text-[#8491a0]">{project.subtitle}</p>
+                          <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-2">{project.subtitle}</p>
                           <p className="font-bold">{project.tech}</p>
                         </div>
-                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                        <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
                           <Link 
                             href={project.github} 
                             target="_blank" 
-                            className={`w-10 h-10 rounded-full text-white flex items-center justify-center hover:opacity-90 transition-opacity`}
+                            className={`w-12 h-12 rounded-full text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-md`}
                             style={{ backgroundColor: project.accent }}
                           >
                             <Github className="w-5 h-5" />
@@ -475,35 +476,44 @@ export default function Home() {
               {[1, 2, 3].map((item, index) => (
                 <motion.div 
                   key={item}
-                  className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden shadow-md transition-transform"
+                  className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
                   initial={{ opacity: 0, y: 50 }}
                   animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ 
+                    scale: 1.03, 
+                    y: -10,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                    transition: { duration: 0.3, ease: "easeOut" }
+                  }}
                 >
-                  <div className="relative h-[200px]">
+                  <div className="relative h-[200px] overflow-hidden">
                     <Image
                       src="/placeholder.jpg"
                       alt={`Blog Post ${item}`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
-                  <div className="p-6">
-                    <span className="text-xs text-gray-500 dark:text-[#8491a0] mb-2 block">None</span>
-                    <h3 className="text-xl font-bold mb-2">None</h3>
-                    <p className="text-gray-700 dark:text-[#c5c5c5] mb-4 line-clamp-3">
+                  <div className="p-8">
+                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">None</span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">None</h3>
+                    <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
                       None
                     </p>
-                    <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <motion.div 
+                      className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
+                      whileHover={{ x: 5 }} 
+                      transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
+                    >
                       <Link 
                         href="https://medium.com/@soneryesilay" 
                         target="_blank"
-                        className="text-[#5badff] hover:text-[#3d90e3] inline-flex items-center"
+                        className="inline-flex items-center"
                       >
                         Read on Medium
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                       </Link>
