@@ -1,4 +1,5 @@
 # My Portfolio Website
+![image](https://github.com/user-attachments/assets/a96f6a82-3eb6-4dc2-827f-febde2195f63)
 
 A modern portfolio website built with Next.js and Tailwind CSS.
 
