@@ -6,6 +6,7 @@ import { Instagram, Twitter, Youtube, Github, Linkedin } from "lucide-react"
 import { ThemeToggle } from "../components/theme-toggle"
 import MobileMenu from "@/components/MobileMenu"
 import { TypeAnimation } from 'react-type-animation'
+import { useState, useEffect } from 'react'
 import { 
   Carousel,
   CarouselContent,
@@ -15,6 +16,30 @@ import {
 } from "@/components/ui/carousel"
 
 export default function Home() {
+  const [currentTime, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    // Update time only on client-side
+    const updateTime = () => {
+      const time = new Date().toLocaleTimeString('en-US', { 
+        timeZone: 'Europe/Istanbul',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      });
+      setCurrentTime(time);
+    };
+    
+    // Initial update
+    updateTime();
+    
+    // Update time every minute
+    const interval = setInterval(updateTime, 60000);
+    
+    // Cleanup on unmount
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#191919] dark:bg-[#191919] bg-white text-black dark:text-white">
       {/* Navigation */}
@@ -476,12 +501,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="text-xs text-gray-700 dark:text-white">
-                    Istanbul Time: {new Date().toLocaleTimeString('en-US', { 
-                      timeZone: 'Europe/Istanbul',
-                      hour: '2-digit',
-                      minute: '2-digit',
-                      hour12: false
-                    })}
+                    Istanbul Time: {currentTime}
                   </span>
                 </div>
               </div>
