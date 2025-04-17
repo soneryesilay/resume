@@ -125,7 +125,11 @@ export default function Home() {
 
         {/* Projects */}
         <section id="projects" className="container mx-auto py-16 px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-[#ff3d00]">PROJECTS</h2>
+          <h2 className="relative text-center mb-16">
+            <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">PROJECTS</span>
+            <span className="relative text-3xl font-bold text-[#ff3d00]">MY PROJECTS</span>
+            <div className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"></div>
+          </h2>
           
           <Carousel 
             opts={{
@@ -311,7 +315,11 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="container mx-auto py-16 px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-[#5badff]">EXPERIENCE</h2>
+          <h2 className="relative text-center mb-16">
+            <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#5badff]">EXPERIENCE</span>
+            <span className="relative text-3xl font-bold text-[#5badff]">MY EXPERIENCE</span>
+            <div className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"></div>
+          </h2>
 
           <div className="max-w-3xl mx-auto space-y-12">
             <div className="flex gap-6">
@@ -343,7 +351,11 @@ export default function Home() {
 
         {/* Blog Section */}
         <section id="blogs" className="container mx-auto py-16 px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-[#ff3d00]">BLOGS</h2>
+          <h2 className="relative text-center mb-16">
+            <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">BLOGS</span>
+            <span className="relative text-3xl font-bold text-[#ff3d00]">MY BLOGS</span>
+            <div className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"></div>
+          </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Blog Post 1 */}
@@ -467,7 +479,7 @@ export default function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:soneryesilay@outlook.com" className="text-gray-700 dark:text-white hover:text-[#5badff] transition-colors">
+                  <a href="mailto:soneryesilay@outlook.com" className="text-gray-700 dark:text.white hover:text-[#5badff] transition-colors">
                     soneryesilay@outlook.com
                   </a>
                 </div>
@@ -484,14 +496,14 @@ export default function Home() {
                 <Link
                   href="https://www.linkedin.com/in/soneryesilay/"
                   target="_blank"
-                  className="text-gray-700 dark:text-white hover:text-[#5badff] transition-colors"
+                  className="text-gray-700 dark:text.white hover:text-[#5badff] transition-colors"
                 >
                   <Linkedin size={20} />
                 </Link>
                 <Link
                   href="https://stackoverflow.com/users/23093350/soner"
                   target="_blank"
-                  className="text-gray-700 dark:text-white hover:text-[#5badff] transition-colors"
+                  className="text-gray-700 dark:text.white hover:text-[#5badff] transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="h-5 w-5 fill-current">
                     <path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z" />
