@@ -322,22 +322,21 @@ export default function Home() {
           </h2>
 
           <div className="max-w-3xl mx-auto space-y-12">
-            <div className="flex gap-6">
+            <div className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-1">
               <div className="flex-shrink-0">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md">
                   <span className="font-bold text-xl">1</span>
                 </div>
               </div>
               <div className="flex-grow">
                 <div className="flex flex-col sm:flex-row justify-between mb-2">
-                  <h3 className="text-xl font-bold">Back-end Developer - Intern at AkıllıPhone</h3>
-                  <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 July </span>
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">Back-end Developer - Intern at AkıllıPhone</h3>
+                  <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 July</span>
                 </div>
-                <p className="text-gray-700 dark:text-[#c5c5c5]">
-                  I worked as an intern back-end developer at AkıllıPhone for 6 months. Gained hands-on experience with
-                  C# and .NET Core development. Contributed to various projects and improved my skills in database
-                  management with MSSQL. Studied and explored microservice architectures during the internship period.
+                <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
+                  I worked as an intern back-end developer at AkıllıPhone for 6 months, where I gained extensive hands-on experience with C# and .NET Core development. During this period, I actively contributed to various projects and significantly improved my skills in database management with MSSQL. I also had the opportunity to study and explore microservice architectures, gaining valuable insights into modern software design patterns.
                 </p>
+                
                 <div className="mt-4 flex gap-2 flex-wrap">
                   <span className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium">C#</span>
                   <span className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium">.NET Core</span>
