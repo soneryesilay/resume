@@ -49,7 +49,7 @@ export default function MobileMenu() {
             
             <div className="flex justify-center space-x-6 pb-10 mt-8">
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/soneryesilay" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-800 dark:text-white hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors"
@@ -58,7 +58,7 @@ export default function MobileMenu() {
                 <Github className="h-6 w-6" />
               </a>
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://linkedin.com/in/soneryesilay" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-800 dark:text-white hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors"
