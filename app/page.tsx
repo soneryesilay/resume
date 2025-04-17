@@ -113,9 +113,7 @@ export default function Home() {
           </h1>
         <br/>
           <p className="max-w-3xl mx-auto text-gray-400 dark:text-[#c5c5c5] mb-8 leading-relaxed">
-            Passionate Back-end Developer focused on building clean, efficient solutions with C#, .NET Core, and MSSQL. 
-            I enjoy creating reliable applications that solve real problems, with a keen interest in cloud technologies and AWS.
-            Always learning and growing to deliver better code every day.
+            Computers and software have been a passion of mine since childhood. This interest began with creating game mods and setting up servers for my friends to play on. In 2022, I was accepted into the Computer Programming program at Trakya University, where I discovered my interest in web development. I completed my internship as a Back-End Developer, during which I honed my skills in .NET technologies like C# and Object-Oriented Programming (OOP). I graduated in 2025 and am currently focused on building clean, efficient solutions with C#, .NET Core, and MSSQL. I enjoy creating reliable applications that solve real problems, with a keen interest in cloud technologies and AWS.
           </p>
 
           <div className="flex justify-center gap-4">
@@ -511,7 +509,7 @@ export default function Home() {
               
               <div className="flex items-center justify-center mb-6">
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text.white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <a href="mailto:soneryesilay@outlook.com" className="text-gray-300 dark:text.white hover:text-[#5badff] transition-colors">
