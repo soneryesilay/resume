@@ -99,7 +99,7 @@ export default function Home() {
                 sequence={[
                   'Back-End Dev.',
                   2000,
-                  '.NET Developer.',
+                  '.NET Developer',
                   2000,
                   'C# Developer',
                   2000
