@@ -5,6 +5,15 @@ import { ThemeProvider } from '../components/theme-provider'
 export const metadata: Metadata = {
   title: 'Soner Yeşilay Portfolio',
   description: 'Back-End Developer Portfolio',
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/logo.svg',
+    },
+  },
 }
 
 export default function RootLayout({
