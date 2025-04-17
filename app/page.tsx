@@ -1,8 +1,11 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Instagram, Twitter, Youtube, Github, Linkedin } from "lucide-react"
 import { ThemeToggle } from "../components/theme-toggle"
 import MobileMenu from "@/components/MobileMenu"
+import { TypeAnimation } from 'react-type-animation'
 import { 
   Carousel,
   CarouselContent,
@@ -67,14 +70,27 @@ export default function Home() {
             Soner Yeşilay
             <br />
             <span className="bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">
-              Back-End Developer
+              <TypeAnimation
+                sequence={[
+                  'Back-End Developer',
+                  2000,
+                  '.NET Core Developer',
+                  2000,
+                  'C# Developer',
+                  2000
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ display: 'inline-block' }}
+                repeat={Infinity}
+              />
             </span>
           </h1>
         <br/>
-          <p className="max-w-2xl mx-auto text-gray-800 dark:text-[#c5c5c5] mb-8 leading-relaxed">
-            Back-end Developer specialized in C#, .Net Core, Linux, MSSQL, and AWS.
-            My expertise lies in crafting robust and scalable backend solutions
-            with a focus on security and performance.
+          <p className="max-w-3xl mx-auto text-gray-400 dark:text-[#c5c5c5] mb-8 leading-relaxed">
+            Passionate Back-end Developer focused on building clean, efficient solutions with C#, .NET Core, and MSSQL. 
+            I enjoy creating reliable applications that solve real problems, with a keen interest in cloud technologies and AWS.
+            Always learning and growing to deliver better code every day.
           </p>
 
           <div className="flex justify-center gap-4">
@@ -440,12 +456,11 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">
-                Get In Touch
+                Contact Me
               </h2>
               
-              <p className="text-gray-600 dark:text.gray-300 mb-6 text-center max-w-2xl mx-auto">
-                Back-End Developer with expertise in C#, .NET Core, Web API, MSSQL, and AWS. I'm passionate about building robust, scalable backend solutions and always open to new opportunities and collaborations.
-              </p>
+              <p className="text-gray-400 dark:text.gray-300 mb-6 text-center max-w-2xl mx-auto">
+              Have a question or interested in working together? Feel free to reach out! I'm always open to discussing new projects, opportunities, or simply connecting with fellow developers. Let's build something great together!              </p>
               
               <div className="flex items-center justify-center mb-6">
                 <div className="flex items-center">
