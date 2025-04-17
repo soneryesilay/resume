@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[360px]">
                     <Image
-                      src="/public/projects/carrepair.jpg"
+                      src="/projects/carrepair.jpg"
                       alt="Car Repair Reservation System"
                       fill
                       className="object-cover"
