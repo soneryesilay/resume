@@ -27,6 +27,7 @@ export default function Home() {
               { href: "/", label: "Home" },
               { href: "#projects", label: "Projects" },
               { href: "#experience", label: "Experience" },
+              { href: "#blogs", label: "Blogs" },
               { href: "#contact", label: "Contact" }
             ].map((item) => (
               <Link 
@@ -321,7 +322,7 @@ export default function Home() {
                   <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 July </span>
                 </div>
                 <p className="text-gray-700 dark:text-[#c5c5c5]">
-                  Worked as an intern back-end developer at AkıllıPhone for 6 months. Gained hands-on experience with
+                  I worked as an intern back-end developer at AkıllıPhone for 6 months. Gained hands-on experience with
                   C# and .NET Core development. Contributed to various projects and improved my skills in database
                   management with MSSQL. Studied and explored microservice architectures during the internship period.
                 </p>
@@ -336,20 +337,130 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Blog Section */}
+        <section id="blogs" className="container mx-auto py-16 px-4">
+          <h2 className="text-3xl font-bold mb-10 text-center text-[#ff3d00]">BLOGS</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Blog Post 1 */}
+            <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="relative h-[200px]">
+                <Image
+                  src="/placeholder.jpg"
+                  alt="Blog Post 1"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              </div>
+              <div className="p-6">
+                <span className="text-xs text-gray-500 dark:text-[#8491a0] mb-2 block">None</span>
+                <h3 className="text-xl font-bold mb-2">None</h3>
+                <p className="text-gray-700 dark:text-[#c5c5c5] mb-4 line-clamp-3">
+                  None
+                </p>
+                <Link 
+                  href="https://medium.com/@soneryesilay" 
+                  target="_blank"
+                  className="text-[#5badff] hover:text-[#3d90e3] inline-flex items-center"
+                >
+                  Read on Medium
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Blog Post 2 */}
+            <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="relative h-[200px]">
+                <Image
+                  src="/placeholder.jpg"
+                  alt="Blog Post 2"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              </div>
+              <div className="p-6">
+                <span className="text-xs text-gray-500 dark:text-[#8491a0] mb-2 block">None</span>
+                <h3 className="text-xl font-bold mb-2">None</h3>
+                <p className="text-gray-700 dark:text-[#c5c5c5] mb-4 line-clamp-3">
+                  None
+                </p>
+                <Link 
+                  href="https://medium.com/@soneryesilay" 
+                  target="_blank"
+                  className="text-[#5badff] hover:text-[#3d90e3] inline-flex items-center"
+                >
+                  Read on Medium
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Blog Post 3 */}
+            <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="relative h-[200px]">
+                <Image
+                  src="/placeholder.jpg"
+                  alt="Blog Post 3"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              </div>
+              <div className="p-6">
+                <span className="text-xs text-gray-500 dark:text-[#8491a0] mb-2 block">None</span>
+                <h3 className="text-xl font-bold mb-2">None</h3>
+                <p className="text-gray-700 dark:text-[#c5c5c5] mb-4 line-clamp-3">
+                  None
+                </p>
+                <Link 
+                  href="https://medium.com/@soneryesilay" 
+                  target="_blank"
+                  className="text-[#5badff] hover:text-[#3d90e3] inline-flex items-center"
+                >
+                  Read on Medium
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-10 text-center">
+            <Link 
+              href="https://medium.com/@soneryesilay" 
+              target="_blank"
+              className="px-6 py-3 rounded-full border-2 border-[#5badff] text-[#5badff] hover:bg-[#5badff] hover:text-white transition-colors inline-flex items-center"
+            >
+              View All Blog Posts
+              <svg viewBox="0 0 1043.63 592.71" className="w-5 h-5 ml-2 fill-current">
+                <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460.03 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
+              </svg>
+            </Link>
+          </div>
+        </section>
+
         {/* Contact Section - Responsive to Theme */}
         <section id="contact" className="bg-white dark:bg-[#191919] py-10 mt-16 border-t border-gray-200 dark:border-gray-800">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">
-                Contact
+                Get In Touch
               </h2>
               
-              <p className="text-gray-600 dark:text.gray-300 mb-6 text-center max-w-2xl mx-auto text-sm">
-                Back-End Developer with experience in C#, .NET Core, Web API, MSSQL, and AWS
+              <p className="text-gray-600 dark:text-gray-300 mb-6 text-center max-w-2xl mx-auto">
+                Back-End Developer with expertise in C#, .NET Core, Web API, MSSQL, and AWS. I'm passionate about building robust, scalable backend solutions and always open to new opportunities and collaborations.
               </p>
               
               <div className="flex items-center justify-center mb-6">
-                <div className="flex items-center mr-2">
+                <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -373,6 +484,15 @@ export default function Home() {
                   className="text-gray-700 dark:text-white hover:text-[#5badff] transition-colors"
                 >
                   <Linkedin size={20} />
+                </Link>
+                <Link
+                  href="https://stackoverflow.com/users/23093350/soner"
+                  target="_blank"
+                  className="text-gray-700 dark:text-white hover:text-[#5badff] transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="h-5 w-5 fill-current">
+                    <path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z" />
+                  </svg>
                 </Link>
               </div>
               

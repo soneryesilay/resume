@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Github, Linkedin } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
 const menuItems = [
   { href: "/", label: "Home" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#blogs", label: "Blogs" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -29,7 +30,8 @@ export default function MobileMenu() {
         </SheetTrigger>
         <SheetContent side="right" className="bg-white dark:bg-[#191919] p-0 w-[200px] sm:w-[200px]">
           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-          <div className="h-full flex flex-col justify-center px-4">
+          <div className="h-full flex flex-col justify-between px-4">
+            <div className="flex-1"></div>
             <nav className="flex flex-col items-center space-y-8">
               {menuItems.map((item) => (
                 <Link
@@ -43,6 +45,28 @@ export default function MobileMenu() {
                 </Link>
               ))}
             </nav>
+            <div className="flex-1"></div>
+            
+            <div className="flex justify-center space-x-6 pb-10 mt-8">
+              <a 
+                href="https://github.com/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-800 dark:text-white hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://linkedin.com/in/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-800 dark:text-white hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+            </div>
           </div>
         </SheetContent>
       </Sheet>
