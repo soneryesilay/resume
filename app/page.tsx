@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[240px]">
                     <Image
-                      src="#"
+                      src="https://private-user-images.githubusercontent.com/122547220/410415021-8730d845-3f5d-4c44-97f6-3559f74bb9ef.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ5MDk3NjYsIm5iZiI6MTc0NDkwOTQ2NiwicGF0aCI6Ii8xMjI1NDcyMjAvNDEwNDE1MDIxLTg3MzBkODQ1LTNmNWQtNGM0NC05N2Y2LTM1NTlmNzRiYjllZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQxN1QxNzA0MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNjRmOGIyNmYyNGYxYWYxZjIyZGQwZWRiNDM2Yzc5ODNhMzM2YmFlZTgyODUxNmYyZDZlOTk0OWI2NmZhNWY3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.hpq-xSEJcqieDBnt7pwmKCZYdYoGh99EKsV65Km7mmg"
                       alt="Car Repair Reservation System"
                       fill
                       className="object-cover"
@@ -170,7 +170,7 @@ export default function Home() {
                       <p className="text-xs text-gray-500 dark:text-[#8491a0]">FULL-STACK PROJECT</p>
                       <p className="font-bold">Built with C# and .NET Core</p>
                     </div>
-                    <Link href="https://github.com/soneryesilay/ReservationSystem" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
+                    <Link href="https://github.com/soneryesilay/CarRepairReservationSystem" className="w-10 h-10 rounded-full bg-[#ff3d00] text-white flex items-center justify-center hover:bg-[#e03600] transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -212,7 +212,7 @@ export default function Home() {
                 <div className="bg-gray-100 dark:bg-[#222222] rounded-lg overflow-hidden">
                   <div className="relative h-[240px]">
                     <Image
-                      src="/public/projects/resume.png"
+                      src="\public\projects\resume.png"
                       alt="Portfolio Website"
                       fill
                       className="object-cover"
