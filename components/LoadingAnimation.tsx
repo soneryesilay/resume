@@ -18,7 +18,7 @@ export const LoadingAnimation = () => {
       >
         {/* Classic spinner with gradient */}
         <motion.div
-          className="w-16 h-16 mb-8 border-t-4 border-l-4 border-r-4 border-b-4 border-b-transparent rounded-full"
+          className="w-16 h-16 border-t-4 border-l-4 border-r-4 border-b-4 border-b-transparent rounded-full"
           style={{ 
             borderTopColor: '#ff3d00',
             borderLeftColor: '#b27aff',
@@ -27,29 +27,8 @@ export const LoadingAnimation = () => {
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
         />
-
-        {/* Loading dots */}
-        <motion.div
-          className="flex space-x-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          {[0, 1, 2].map((index) => (
-            <motion.div
-              key={index}
-              className="w-3 h-3 rounded-full bg-gradient-to-r from-[#ff3d00] to-[#5badff]"
-              initial={{ scale: 0 }}
-              animate={{ scale: [0, 1, 0] }}
-              transition={{
-                duration: 1.2,
-                repeat: Infinity,
-                delay: index * 0.2,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </motion.div>
+        
+        {/* Üç nokta animasyonu kaldırıldı */}
       </motion.div>
     </motion.div>
   );
