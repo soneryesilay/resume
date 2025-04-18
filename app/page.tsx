@@ -182,7 +182,12 @@ export default function Home() {
              My passion for computers started when I was a kid, creating game mods and setting up servers for my friends. In 2022, I began studying Computer Programming at Trakya University and fell in love with web development. After an internship focused on .NET, C#, and OOP, I graduated in 2025—and now I build clean, efficient solutions with C#, .NET Core, and MSSQL while continuing to explore cloud technologies like AWS.
             </motion.p>
 
-            <div className="flex items-center justify-center space-x-4">
+            <motion.div 
+              className="flex items-center justify-center space-x-4"
+              initial={{ y: 50, opacity: 0 }}
+              animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.7, delay: isLoading ? 2.6 : 0.8 }}
+            >
               <motion.div 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }}
@@ -213,7 +218,7 @@ export default function Home() {
                   My Resume
                 </Link>
               </motion.div>
-            </div>
+            </motion.div>
           </section>
 
           {/* Tech Stack */}
