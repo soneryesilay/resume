@@ -317,7 +317,7 @@ export default function Home() {
                     github: "https://github.com/soneryesilay/Net-QrMenu-WithSignalR"
                   },
                   {
-                    title: "Iyzico 3D Integration",
+                    title: "Iyzico 3D Pay Integration",
                     subtitle: "BACK-END PROJECT",
                     tech: "Built with .NET Core Web Api and Angular",
                     image: "https://www.matillion.com/uploads/cards/Blog-API.png",
