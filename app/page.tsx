@@ -179,7 +179,7 @@ export default function Home() {
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: isLoading ? 2.4 : 0.6 }}
             >
-              I cultivated my passion for computers and software in childhood by developing game mods and setting up servers for friends. In 2022, I enrolled in Trakya University's Computer Programming program, where I discovered a passion for web development. As a Back‑End Developer intern, I gained hands‑on experience with .NET technologies, C#, and object‑oriented programming. Since graduating in 2025, I've been focused on building clean, efficient solutions with C#, .NET Core, and MSSQL, while maintaining a strong interest in cloud computing and AWS.
+             My passion for computers started when I was a kid, creating game mods and setting up servers for my friends. In 2022, I began studying Computer Programming at Trakya University and fell in love with web development. After an internship focused on .NET, C#, and OOP, I graduated in 2025—and now I build clean, efficient solutions with C#, .NET Core, and MSSQL while continuing to explore cloud technologies like AWS.
             </motion.p>
 
             <div className="flex items-center justify-center space-x-4">
