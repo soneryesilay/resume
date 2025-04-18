@@ -60,7 +60,7 @@ export const useLoadingState = () => {
     // This simulates waiting for content to load
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1000);
     
     return () => clearTimeout(timer);
   }, []);
