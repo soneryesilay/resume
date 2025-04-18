@@ -554,10 +554,10 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
                   <div className="p-8">
-                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">None</span>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">None</h3>
+                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Soon</span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Medium Blogs</h3>
                     <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                      None
+                      .Net Core
                     </p>
                     <motion.div 
                       className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
