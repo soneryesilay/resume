@@ -37,7 +37,7 @@ export default function Home() {
       } else {
         api.scrollTo(0);
       }
-    }, 5000); // Changed from 3000 to 5000 ms (5 seconds)
+    }, 3000); // Scroll every 3 seconds
     
     // Pause auto-scroll when user interacts with carousel
     const onMouseEnter = () => clearInterval(intervalId);
@@ -51,7 +51,7 @@ export default function Home() {
         } else {
           api.scrollTo(0);
         }
-      }, 5000); // Changed from 3000 to 5000 ms (5 seconds)
+      }, 5000);
       
       return () => clearInterval(newIntervalId);
     };
