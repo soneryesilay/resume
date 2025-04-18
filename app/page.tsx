@@ -325,9 +325,9 @@ export default function Home() {
                     github: "https://github.com/soneryesilay/Iyzico3DPay-Angular-Net"
                   }
                 ].map((project, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                  <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <motion.div 
-                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform"
+                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform mx-2"
                       whileHover={{ 
                         scale: 1.03, 
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
@@ -335,15 +335,15 @@ export default function Home() {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="relative h-[360px] overflow-hidden">
+                      <div className="relative h-[280px] overflow-hidden">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
                           className="object-cover transition-transform duration-700 hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-8">
-                          <h3 className="text-2xl font-bold text-white drop-shadow-md">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4">
+                          <h3 className="text-lg font-bold text-white drop-shadow-md">
                             {project.title.split(" ").slice(0, -1).join(" ")}{" "}
                             <span style={{ color: project.accent }}>
                               {project.title.split(" ").slice(-1)}
@@ -351,19 +351,19 @@ export default function Home() {
                           </h3>
                         </div>
                       </div>
-                      <div className="p-8 flex justify-between items-center">
+                      <div className="p-4 flex justify-between items-center">
                         <div>
-                          <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-2">{project.subtitle}</p>
-                          <p className="font-bold">{project.tech}</p>
+                          <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-1">{project.subtitle}</p>
+                          <p className="font-bold text-sm">{project.tech}</p>
                         </div>
                         <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
                           <Link 
                             href={project.github} 
                             target="_blank" 
-                            className={`w-12 h-12 rounded-full text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-md`}
+                            className={`w-10 h-10 rounded-full text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-md`}
                             style={{ backgroundColor: project.accent }}
                           >
-                            <Github className="w-5 h-5" />
+                            <Github className="w-4 h-4" />
                           </Link>
                         </motion.div>
                       </div>
