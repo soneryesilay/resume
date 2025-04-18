@@ -479,7 +479,7 @@ export default function Home() {
                 <div className="flex-grow">
                   <div className="flex flex-col sm:flex-row justify-between mb-2">
                     <h3 className="text-xl font-bold text-gray-300">Back-end Developer - Intern at AkıllıPhone</h3>
-                    <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 July</span>
+                    <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 Jul</span>
                   </div>
                   <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
                     I worked on 3 projects using C# and .NET Core, optimized database queries for 15% better performance, and built a microservice with senior guidance. Gained practical experience through team collaboration and code reviews while contributing to the main company project.
@@ -546,7 +546,7 @@ export default function Home() {
                 >
                   <div className="relative h-[200px] overflow-hidden">
                     <Image
-                      src="/placeholder.jpg"
+                      src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
                       alt={`Blog Post ${item}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -554,10 +554,10 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
                   <div className="p-8">
-                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Soon</span>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Medium Blogs</h3>
+                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
                     <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                      .Net Core
+                      
                     </p>
                     <motion.div 
                       className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
