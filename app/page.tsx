@@ -182,16 +182,23 @@ export default function Home() {
               I cultivated my passion for computers and software in childhood by developing game mods and setting up servers for friends. In 2022, I enrolled in Trakya University's Computer Programming program, where I discovered a passion for web development. As a Back‑End Developer intern, I gained hands‑on experience with .NET technologies, C#, and object‑oriented programming. Since graduating in 2025, I've been focused on building clean, efficient solutions with C#, .NET Core, and MSSQL, while maintaining a strong interest in cloud computing and AWS.
             </motion.p>
 
-            <motion.div 
-              className="flex justify-center gap-4"
-              initial={{ y: 50, opacity: 0 }}
-              animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: isLoading ? 2.6 : 0.8 }}
-            >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <div className="flex items-center justify-center space-x-4">
+              <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                whileTap={{ scale: 0.95 }}
+                className="relative z-10"
+              >
                 <Link
                   href="#contact"
-                  className="px-6 py-3 rounded-full border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-[#191919] transition-colors"
+                  className="px-6 py-3 rounded-full border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-[#191919] transition-colors inline-block touch-manipulation"
+                  onClick={(e) => {
+                    // Ensure the link works on mobile by adding explicit handler
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      e.preventDefault();
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   Get in Touch
                 </Link>
@@ -206,7 +213,7 @@ export default function Home() {
                   My Resume
                 </Link>
               </motion.div>
-            </motion.div>
+            </div>
           </section>
 
           {/* Tech Stack */}
