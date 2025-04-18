@@ -12,7 +12,8 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
+  CarouselApi
 } from "@/components/ui/carousel"
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollInView, useSmoothScroll, useParallax, useLoadingState } from "@/hooks/useAnimations"
@@ -23,7 +24,50 @@ export default function Home() {
   const { isLoading } = useLoadingState();
   const { scrollY } = useParallax();
   useSmoothScroll();
+  const [api, setApi] = useState<CarouselApi>();
   
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!api) return;
+    
+    // Set up auto-scroll interval
+    const intervalId = setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        api.scrollTo(0);
+      }
+    }, 5000); // Changed from 3000 to 5000 ms (5 seconds)
+    
+    // Pause auto-scroll when user interacts with carousel
+    const onMouseEnter = () => clearInterval(intervalId);
+    const onMouseLeave = () => {
+      clearInterval(intervalId);
+      
+      // Resume auto-scroll after mouse leaves
+      const newIntervalId = setInterval(() => {
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          api.scrollTo(0);
+        }
+      }, 5000); // Changed from 3000 to 5000 ms (5 seconds)
+      
+      return () => clearInterval(newIntervalId);
+    };
+    
+    const elm = api.rootNode();
+    elm.addEventListener('mouseenter', onMouseEnter);
+    elm.addEventListener('mouseleave', onMouseLeave);
+    
+    // Clean up on component unmount
+    return () => {
+      clearInterval(intervalId);
+      elm.removeEventListener('mouseenter', onMouseEnter);
+      elm.removeEventListener('mouseleave', onMouseLeave);
+    };
+  }, [api]);
+
   // References for scroll animations
   const heroRef = useScrollInView();
   const techStackRef = useScrollInView();
@@ -284,6 +328,7 @@ export default function Home() {
                 loop: true
               }}
               className="relative w-full"
+              setApi={setApi}
             >
               <CarouselContent>
                 {/* Project Items */}
