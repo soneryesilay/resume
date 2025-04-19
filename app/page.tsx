@@ -519,74 +519,121 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
             </div>
           </section>
 
-          {/* Blog Section */}
-          <section id="blogs" className="container mx-auto py-16 px-4" ref={blogsRef.ref}>
+            {/* Blog Section */}
+            <section id="blogs" className="container mx-auto py-16 px-4" ref={blogsRef.ref}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={blogsRef.isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5 }}
             >
               <h2 className="relative text-center mb-16">
-                <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">BLOGS</span>
-                <span className="relative text-3xl font-bold text-[#ff3d00]">MY BLOGS</span>
-                <motion.div 
-                  className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
-                  initial={{ width: 0 }}
-                  animate={blogsRef.isInView ? { width: 80 } : {}}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                ></motion.div>
+              <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">BLOGS</span>
+              <span className="relative text-3xl font-bold text-[#ff3d00]">MY BLOGS</span>
+              <motion.div 
+                className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
+                initial={{ width: 0 }}
+                animate={blogsRef.isInView ? { width: 80 } : {}}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              ></motion.div>
               </h2>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Blog Post Placeholders */}
-              {[1, 2, 3].map((item, index) => (
+              {/* Actual Blog Post */}
+              <motion.div 
+              className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+              initial={{ opacity: 0, y: 50 }}
+              animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ 
+                scale: 1.03, 
+                y: -10,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              >
+              <div className="relative h-[200px] overflow-hidden">
+                <Image
+                src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*AALox1K041nEYILxKsqcGg.jpeg"
+                alt="JWT Authentication Blog"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+              </div>
+              <div className="p-8">
+                <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
+                <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">10 Adımda ASP.NET Core 8.0 ile JWT Tabanlı Kimlik Doğrulama Sistemi Oluşturma</h3>
+                <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
+                ASP.NET Core 8.0 ile JWT tabanlı kimlik doğrulama sistemi oluşturma hakkında detaylı bir rehber. Adım adım uygulamalı örneklerle kimlik doğrulama sistemini nasıl kurabilirsiniz.
+                </p>
                 <motion.div 
-                  key={item}
-                  className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                  whileHover={{ 
-                    scale: 1.03, 
-                    y: -10,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                    transition: { duration: 0.3, ease: "easeOut" }
-                  }}
+                className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
+                whileHover={{ x: 5 }} 
+                transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
                 >
-                  <div className="relative h-[200px] overflow-hidden">
-                    <Image
-                      src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
-                      alt={`Blog Post ${item}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  </div>
-                  <div className="p-8">
-                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
-                    <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                      
-                    </p>
-                    <motion.div 
-                      className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
-                      whileHover={{ x: 5 }} 
-                      transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
-                    >
-                      <Link 
-                        href="https://medium.com/@soneryesilay" 
-                        target="_blank"
-                        className="inline-flex items-center"
-                      >
-                        Read on Medium
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </Link>
-                    </motion.div>
-                  </div>
+                <Link 
+                  href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937" 
+                  target="_blank"
+                  className="inline-flex items-center"
+                >
+                  Read on Medium
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
                 </motion.div>
+              </div>
+              </motion.div>
+              
+              {/* Blog Post Placeholders */}
+              {[1, 2].map((item, index) => (
+              <motion.div 
+                key={item}
+                className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                initial={{ opacity: 0, y: 50 }}
+                animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: (index + 1) * 0.2 + 0.3 }}
+                whileHover={{ 
+                scale: 1.03, 
+                y: -10,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                transition: { duration: 0.3, ease: "easeOut" }
+                }}
+              >
+                <div className="relative h-[200px] overflow-hidden">
+                <Image
+                  src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
+                  alt={`Blog Post ${item}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
+                <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
+                <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
+                  More technical tutorials and articles coming soon on my Medium profile.
+                </p>
+                <motion.div 
+                  className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
+                  whileHover={{ x: 5 }} 
+                  transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
+                >
+                  <Link 
+                  href="https://medium.com/@soneryesilay" 
+                  target="_blank"
+                  className="inline-flex items-center"
+                  >
+                  Read on Medium
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                  </Link>
+                </motion.div>
+                </div>
+              </motion.div>
               ))}
             </div>
             
@@ -597,19 +644,19 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
               transition={{ duration: 0.5, delay: 1 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
-                  href="https://medium.com/@soneryesilay" 
-                  target="_blank"
-                  className="px-6 py-3 rounded-full border-2 border-[#5badff] text-[#5badff] hover:bg-[#5badff] hover:text-white transition-colors inline-flex items-center"
-                >
-                  View All Blog Posts
-                  <svg viewBox="0 0 1043.63 592.71" className="w-5 h-5 ml-2 fill-current">
-                    <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460.03 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
-                  </svg>
-                </Link>
+              <Link 
+                href="https://medium.com/@soneryesilay" 
+                target="_blank"
+                className="px-6 py-3 rounded-full border-2 border-[#5badff] text-[#5badff] hover:bg-[#5badff] hover:text-white transition-colors inline-flex items-center"
+              >
+                View All Blog Posts
+                <svg viewBox="0 0 1043.63 592.71" className="w-5 h-5 ml-2 fill-current">
+                <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460.03 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
+                </svg>
+              </Link>
               </motion.div>
             </motion.div>
-          </section>
+            </section>
 
           {/* Contact Section - Responsive to Theme */}
           <section id="contact" className="bg-white dark:bg-[#191919] py-10 mt-16 border-t border-gray-200 dark:border-gray-800" ref={contactRef.ref}>
