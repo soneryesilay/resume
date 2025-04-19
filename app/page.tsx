@@ -362,7 +362,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                     title: "Secure Authentication API",
                     subtitle: "BACK-END PROJECT",
                     tech: "Built with .NET Core Web Api",
-                    image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*zShbWWgpKiIx4ptrhSyU9Q.png",
+                    image: "/projects/jwtidentity.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/SecureAuth"
                   },
@@ -394,7 +394,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                     title: "Book Store Web API",
                     subtitle: "BACK-END PROJECT",
                     tech: "Built with .NET Core Web Api",
-                    image: "https://www.matillion.com/uploads/cards/Blog-API.png",
+                    image: "/projects/bookstore.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/BookStoreAppWebAPI"
                   },
@@ -402,7 +402,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                     title: "Restaurant Qr Menu",
                     subtitle: "FULL-STACK PROJECT",
                     tech: "Built with .NET Core Web Api and MVC",
-                    image: "https://media.licdn.com/dms/image/v2/D4D22AQEkdV7WUggiIA/feedshare-shrink_800/B4DZQH_eXKGUAg-/0/1735300872444?e=1747872000&v=beta&t=fNVXpD0sGWFF9ZRQ46LWFYk-5QCbHOtTSOdr9seyz0w",
+                    image: "/projects/restaurant.png",
                     accent: "#ff3d00",
                     github: "https://github.com/soneryesilay/Net-QrMenu-WithSignalR"
                   },
@@ -410,7 +410,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                     title: "Iyzico 3D Pay Integration",
                     subtitle: "FULL-STACK PROJECT",
                     tech: "Built with .NET Core Web Api and Angular",
-                    image: "https://www.matillion.com/uploads/cards/Blog-API.png",
+                    image: "/projects/IyzicoPay.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Iyzico3DPay-Angular-Net"
                   }
