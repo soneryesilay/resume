@@ -378,7 +378,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                     title: "Hotel Management System",
                     subtitle: "FULL-STACK PROJECT",
                     tech: "Built with .NET Core and MVC",
-                    image: "https://media.licdn.com/dms/image/v2/D4D22AQFLJ8FiGD1jwA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1728481470690?e=1747872000&v=beta&t=DXsHRXYqEvPmrC-VGwgLtx4pSq_51YJ7pYqBjByb3Q8",
+                    image: "/projects/hotelmanagement.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Net-HotelApi-Project"
                   },
