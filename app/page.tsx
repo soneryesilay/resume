@@ -30,41 +30,64 @@ export default function Home() {
   useEffect(() => {
     if (!api) return;
     
-    // Set up auto-scroll interval
-    const intervalId = setInterval(() => {
-      if (api.canScrollNext()) {
-        api.scrollNext();
-      } else {
-        api.scrollTo(0);
-      }
-    }, 3000); // Scroll every 3 seconds
+    // Create variable to track if user has interacted with carousel
+    let userInteracted = false;
+    let pauseTimeout: NodeJS.Timeout;
     
-    // Pause auto-scroll when user interacts with carousel
-    const onMouseEnter = () => clearInterval(intervalId);
-    const onMouseLeave = () => {
-      clearInterval(intervalId);
-      
-      // Resume auto-scroll after mouse leaves
-      const newIntervalId = setInterval(() => {
-        if (api.canScrollNext()) {
-          api.scrollNext();
-        } else {
-          api.scrollTo(0);
+    // Set up auto-scroll interval with a longer initial delay
+    const startAutoScroll = () => {
+      return setInterval(() => {
+        // Only auto-scroll if user hasn't interacted recently
+        if (!userInteracted) {
+          if (api.canScrollNext()) {
+            api.scrollNext();
+          } else {
+            api.scrollTo(0);
+          }
         }
-      }, 5000);
-      
-      return () => clearInterval(newIntervalId);
+      }, 5000); // Increased from 3000 to 5000 for better viewing experience
     };
     
-    const elm = api.rootNode();
-    elm.addEventListener('mouseenter', onMouseEnter);
-    elm.addEventListener('mouseleave', onMouseLeave);
+    let intervalId = startAutoScroll();
     
-    // Clean up on component unmount
+    // Event handlers to detect user interaction
+    const onUserInteraction = () => {
+      // Clear existing pause timeout
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+      
+      // Stop auto-scrolling immediately
+      userInteracted = true;
+      clearInterval(intervalId);
+      
+      // Set a timeout to resume auto-scroll after longer inactivity (10 seconds)
+      pauseTimeout = setTimeout(() => {
+        userInteracted = false;
+        intervalId = startAutoScroll();
+      }, 10000);
+    };
+    
+    // Register all interaction events
+    const elm = api.rootNode();
+    
+    // Mouse events
+    elm.addEventListener('mouseenter', onUserInteraction);
+    elm.addEventListener('mousemove', onUserInteraction);
+    elm.addEventListener('click', onUserInteraction);
+    
+    // Touch events for mobile
+    elm.addEventListener('touchstart', onUserInteraction);
+    elm.addEventListener('touchmove', onUserInteraction);
+    
+    // Clean up all event listeners on component unmount
     return () => {
       clearInterval(intervalId);
-      elm.removeEventListener('mouseenter', onMouseEnter);
-      elm.removeEventListener('mouseleave', onMouseLeave);
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+      
+      elm.removeEventListener('mouseenter', onUserInteraction);
+      elm.removeEventListener('mousemove', onUserInteraction);
+      elm.removeEventListener('click', onUserInteraction);
+      elm.removeEventListener('touchstart', onUserInteraction);
+      elm.removeEventListener('touchmove', onUserInteraction);
     };
   }, [api]);
 
