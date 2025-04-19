@@ -586,7 +586,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
               </div>
               <div className="p-8">
                 <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">10 Adımda ASP.NET Core 8.0 ile JWT Tabanlı Kimlik Doğrulama Sistemi Oluşturma</h3>
+                <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">10 Adımda .NET Core 8.0 ile JWT Tabanlı Kimlik Doğrulama</h3>
                 <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
                 ASP.NET Core 8.0 ile JWT tabanlı kimlik doğrulama sistemi oluşturma hakkında detaylı bir rehber. Adım adım uygulamalı örneklerle kimlik doğrulama sistemini nasıl kurabilirsiniz.
                 </p>
