@@ -83,11 +83,11 @@ export default function Home() {
       clearInterval(intervalId);
       if (pauseTimeout) clearTimeout(pauseTimeout);
       
-      elm.removeEventListener('mouseenter', onUserInteraction);
-      elm.removeEventListener('mousemove', onUserInteraction);
-      elm.removeEventListener('click', onUserInteraction);
-      elm.removeEventListener('touchstart', onUserInteraction);
-      elm.removeEventListener('touchmove', onUserInteraction);
+      elm.removeEventListener('mouseenter');
+      elm.removeEventListener('mousemove');
+      elm.removeEventListener('click');
+      elm.removeEventListener('touchstart');
+      elm.removeEventListener('touchmove');
     };
   }, [api]);
 
@@ -471,6 +471,24 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                 </motion.div>
               </div>
             </Carousel>
+            
+            <motion.div 
+              className="mt-10 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={projectsRef.isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link 
+                  href="https://github.com/soneryesilay?tab=repositories" 
+                  target="_blank"
+                  className="px-6 py-3 rounded-full border-2 border-[#ff3d00] text-[#ff3d00] hover:bg-[#ff3d00] hover:text-white transition-colors inline-flex items-center"
+                >
+                  View All Projects
+                  <Github className="w-5 h-5 ml-2" />
+                </Link>
+              </motion.div>
+            </motion.div>
           </section>
 
           {/* Experience */}
