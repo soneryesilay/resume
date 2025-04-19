@@ -336,6 +336,14 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                 {/* Project Items */}
                 {[
                   {
+                    title: "Secure Authentication API",
+                    subtitle: "BACK-END PROJECT",
+                    tech: "Built with .NET Core",
+                    image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*zShbWWgpKiIx4ptrhSyU9Q.png",
+                    accent: "#5badff",
+                    github: "https://github.com/soneryesilay/SecureAuth"
+                  },
+                  {
                     title: "Car Repair Reservation System",
                     subtitle: "FULL-STACK PROJECT",
                     tech: "Built with C# and .NET Core",
