@@ -338,7 +338,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                   {
                     title: "Secure Authentication API",
                     subtitle: "BACK-END PROJECT",
-                    tech: "Built with .NET Core",
+                    tech: "Built with .NET Core Web Api",
                     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*zShbWWgpKiIx4ptrhSyU9Q.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/SecureAuth"
@@ -346,7 +346,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                   {
                     title: "Car Repair Reservation System",
                     subtitle: "FULL-STACK PROJECT",
-                    tech: "Built with C# and .NET Core",
+                    tech: "Built with .NET Core Web Api and MVC",
                     image: "/projects/carrepair.jpg",
                     accent: "#ff3d00",
                     github: "https://github.com/soneryesilay/CarRepairReservationSystem"
@@ -385,7 +385,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                   },
                   {
                     title: "Iyzico 3D Pay Integration",
-                    subtitle: "BACK-END PROJECT",
+                    subtitle: "FULL-STACK PROJECT",
                     tech: "Built with .NET Core Web Api and Angular",
                     image: "https://www.matillion.com/uploads/cards/Blog-API.png",
                     accent: "#5badff",
