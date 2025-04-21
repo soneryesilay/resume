@@ -83,11 +83,11 @@ export default function Home() {
       clearInterval(intervalId);
       if (pauseTimeout) clearTimeout(pauseTimeout);
       
-      elm.removeEventListener('mouseenter');
-      elm.removeEventListener('mousemove');
-      elm.removeEventListener('click');
-      elm.removeEventListener('touchstart');
-      elm.removeEventListener('touchmove');
+      elm.removeEventListener('mouseenter', onUserInteraction);
+      elm.removeEventListener('mousemove', onUserInteraction);
+      elm.removeEventListener('click', onUserInteraction);
+      elm.removeEventListener('touchstart', onUserInteraction);
+      elm.removeEventListener('touchmove', onUserInteraction);
     };
   }, [api]);
 
@@ -274,7 +274,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
                     }
                   }}
                 >
-                  Get in Touch
+                  Contact
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
