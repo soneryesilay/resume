@@ -223,11 +223,11 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">
                   <TypeAnimation
                     sequence={[
-                      'Back-End Dev.',
+                      'Software Dev.',
                       2000,
-                      '.NET Developer',
+                      'Programmer',
                       2000,
-                      'C# Developer',
+                      '.NET Core Dev.',
                       2000
                     ]}
                     wrapper="span"
