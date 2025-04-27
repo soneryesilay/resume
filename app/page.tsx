@@ -642,7 +642,7 @@ Now, I build clean and efficient solutions using .NET Core and MSSQL, while cont
               >
                 <div className="relative h-[200px] overflow-hidden">
                   <Image
-                    src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*8-_5p2eFcuJTxM-v-Ao0Rg.png"
+                    src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*LNeccJ41w8Ek0v9aCRP2mg.png"
                     alt="CRUD with .NET Core and React Blog"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
