@@ -5,8 +5,43 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title: 'Soner Yeşilay',
-  description: 'Back-End Developer Portfolio',
+  title: 'Soner Yeşilay | Yazılım Geliştirici & Programcı',
+  description: 'Yazılım geliştirici ve teknoloji tutkunu. Web, masaüstü, mobil uygulama ve sistem çözümleri. Modern teknolojilere hakim, öğrenmeye ve gelişmeye açık bir yazılım profesyoneli.',
+  keywords: 'Yazılım Geliştirici, Bilgisayar Programcısı, Full Stack, Web Geliştirme, .NET, C#, JavaScript, React, Yazılım Çözümleri, Mobil Uygulama, Masaüstü Uygulama, IT Uzmanı, Veri Tabanı, Sistem Geliştirme, Türkiye, Soner Yeşilay',
+  authors: [{ name: 'Soner Yeşilay' }],
+  creator: 'Soner Yeşilay',
+  publisher: 'Soner Yeşilay',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  metadataBase: new URL('https://soneryesilay.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Soner Yeşilay | Yazılım Geliştirici & Programcı',
+    description: 'Çok yönlü yazılım geliştirici. Web, masaüstü ve mobil uygulamalar için modern ve yenilikçi çözümler geliştiriyorum. Teknoloji tutkunu ve sürekli öğrenmeye açık bir yazılım profesyoneli.',
+    url: 'https://soneryesilay.com',
+    siteName: 'Soner Yeşilay Portfolio',
+    images: [
+      {
+        url: '/placeholder-user.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Soner Yeşilay - Yazılım Geliştirici',
+      },
+    ],
+    locale: 'tr_TR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Soner Yeşilay | Yazılım Geliştirici & Programcı',
+    description: 'Modern teknolojilerle web, masaüstü ve mobil uygulamalar geliştiren yazılım profesyoneli. Yenilikçi çözümler ve sürdürülebilir kodlama yaklaşımı.',
+    images: ['/placeholder-user.jpg'],
+    creator: '@soneryesilay',
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -16,6 +51,12 @@ export const metadata: Metadata = {
       url: '/favicon.ico',
     },
   },
+  verification: {
+    // Google Search Console'dan aldığınız doğrulama kodunu buraya eklemeniz gerekiyor
+    // Örneğin: google: 'AbCdEfGhIjK1LmNoPqRsTuVwXyZ_0123456789'
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+  },
+  category: 'technology',
 }
 
 export default function RootLayout({
