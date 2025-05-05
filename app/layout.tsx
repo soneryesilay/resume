@@ -51,11 +51,6 @@ export const metadata: Metadata = {
       url: '/favicon.ico',
     },
   },
-  verification: {
-    // Google Search Console'dan aldığınız doğrulama kodunu buraya eklemeniz gerekiyor
-    // Örneğin: google: 'AbCdEfGhIjK1LmNoPqRsTuVwXyZ_0123456789'
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-  },
   category: 'technology',
 }
 
