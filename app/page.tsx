@@ -246,10 +246,7 @@ export default function Home() {
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: isLoading ? 2.4 : 0.6 }}
             >
-My interest in computers began in childhood, creating game mods and setting up servers for friends.
-In 2022, I started studying Computer Programming at Trakya University and discovered my passion for web development.
-After an internship focused on .NET Core and OOP, I graduated in 2025.
-Now, I build clean and efficient solutions using .NET Core and MSSQL, while continuing to explore cloud technologies like AWS.            </motion.p>
+Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya University (Jan 2025) with hands-on experience in backend development from a 5-month internship at AkıllıPhone. I’m passionate about applying my strong foundation in API design, database management, and clean-code principles to real-world projects, and I regularly share my work on GitHub and Medium. I aim to advance my career in software development by building scalable, sustainable solutions—feel free to explore my profiles or get in touch!            </motion.p>
 
             <motion.div 
               className="flex items-center justify-center space-x-4"
