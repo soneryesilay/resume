@@ -247,7 +247,7 @@ export default function Home() {
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: isLoading ? 2.4 : 0.6 }}
             >
-Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya University (Jan 2025) with hands-on experience in backend development from a 5-month internship at AkıllıPhone. I’m passionate about applying my strong foundation in API design, database management, and clean-code principles to real-world projects, and I regularly share my work on GitHub and Medium. I aim to advance my career in software development by building scalable, sustainable solutions—feel free to explore my profiles or get in touch!            </motion.p>
+Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya University (Jan 2025) with hands-on experience in backend development from a 5-month internship. I’m passionate about applying my strong foundation in API design, database management, and clean-code principles to real-world projects, and I regularly share my work on GitHub and Medium. I aim to advance my career in software development by building scalable, sustainable solutions—feel free to explore my profiles or get in touch!            </motion.p>
 
             <motion.div 
               className="flex items-center justify-center space-x-4"
