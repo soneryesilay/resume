@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title: 'Soner Yeşilay | Yazılım Geliştirici & Programcı',
+  title: 'Soner Yeşilay | Software Developer & Programmer',
   description: 'Yazılım geliştirici ve teknoloji tutkunu. Web, masaüstü, mobil uygulama ve sistem çözümleri. Modern teknolojilere hakim, öğrenmeye ve gelişmeye açık bir yazılım profesyoneli.',
   keywords: 'Yazılım Geliştirici, Bilgisayar Programcısı, Full Stack, Web Geliştirme, .NET, C#, JavaScript, React, Yazılım Çözümleri, Mobil Uygulama, Masaüstü Uygulama, IT Uzmanı, Veri Tabanı, Sistem Geliştirme, Türkiye, Soner Yeşilay',
   authors: [{ name: 'Soner Yeşilay' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Soner Yeşilay | Yazılım Geliştirici & Programcı',
+    title: 'Soner Yeşilay | Software Developer & Programmer',
     description: 'Çok yönlü yazılım geliştirici. Web, masaüstü ve mobil uygulamalar için modern ve yenilikçi çözümler geliştiriyorum. Teknoloji tutkunu ve sürekli öğrenmeye açık bir yazılım profesyoneli.',
     url: 'https://soneryesilay.com',
     siteName: 'Soner Yeşilay Portfolio',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: '/placeholder-user.jpg',
         width: 800,
         height: 600,
-        alt: 'Soner Yeşilay - Yazılım Geliştirici',
+        alt: 'Soner Yeşilay - Software Developer',
       },
     ],
     locale: 'tr_TR',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Soner Yeşilay | Yazılım Geliştirici & Programcı',
+    title: 'Soner Yeşilay | Software Developer & Programmer',
     description: 'Modern teknolojilerle web, masaüstü ve mobil uygulamalar geliştiren yazılım profesyoneli. Yenilikçi çözümler ve sürdürülebilir kodlama yaklaşımı.',
     images: ['/placeholder-user.jpg'],
     creator: '@soneryesilay',
