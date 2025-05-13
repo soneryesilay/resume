@@ -514,7 +514,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 initial={{ y: 100, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                whileHover={{ y: -8 }}
+                whileHover={{ scale: 1.03, y: -5 }}
               >
                 <div className="flex-shrink-0">
                   <motion.div 
