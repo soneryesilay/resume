@@ -514,13 +514,13 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 initial={{ y: 100, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                whileHover={{ scale: 1.03, y: -5 }}
+                whileHover={{ scale: 1.03, y: -5, transition: { duration: 0.15 } }}
               >
                 <div className="flex-shrink-0">
                   <motion.div 
                     className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.1 }}
                   >
                     <span className="font-bold text-xl">1</span>
                   </motion.div>
@@ -547,7 +547,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                         initial={{ opacity: 0, x: -20 }}
                         animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.7 }}
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
                       >
                         {skill}
                       </motion.span>
