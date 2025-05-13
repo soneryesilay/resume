@@ -415,13 +415,15 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 ].map((project, index) => (
                   <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <motion.div 
-                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform mx-2"
+                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg transform mx-2 cursor-pointer" // Adjusted className
                       whileHover={{ 
                         scale: 1.03, 
+                        y: -10,
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
-                        y: -10
+                        transition: { duration: 0.2, ease: "easeOut" } // Matched blog's whileHover, reduced duration
                       }}
-                      transition={{ duration: 0.3 }}
+                      // Removed the explicit transition={{ duration: 0.3 }} from here to let whileHover's transition dominate for hover.
+                      // If there are other transitions intended for this div, they might need specific setup.
                     >
                       <div className="relative h-[280px] overflow-hidden">
                         <Image
@@ -510,17 +512,29 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
 
             <div className="max-w-3xl mx-auto space-y-12">
               <motion.div 
-                className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all"
+                className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800 transition-shadow duration-300"
                 initial={{ y: 100, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                whileHover={{ scale: 1.03, y: -5, transition: { duration: 0.15 } }}
+                transition={{ duration: 0.2, delay: 0.2 }}                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8, 
+                  boxShadow: "0 20px 35px -12px rgba(0,0,0,0.25)", 
+                  transition: { 
+                    duration: 0.2, 
+                    ease: "easeOut"
+                  } 
+                }}
               >
                 <div className="flex-shrink-0">
                   <motion.div 
-                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.1 }}
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"                    whileHover={{ 
+                      scale: 1.1, 
+                      y: -2, 
+                      transition: { 
+                        duration: 0.15, 
+                        ease: "easeOut"
+                      } 
+                    }}
                   >
                     <span className="font-bold text-xl">1</span>
                   </motion.div>
@@ -543,11 +557,16 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     {["C#", ".NET Core", "MSSQL", "Microservice"].map((skill, index) => (
                       <motion.span 
                         key={skill}
-                        className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium"
+                        className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
                         initial={{ opacity: 0, x: -20 }}
                         animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.4, delay: index * 0.1 + 0.7 }}
-                        whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.7 }}                        whileHover={{ 
+                          scale: 1.1, 
+                          transition: { 
+                            duration: 0.1, 
+                            ease: "easeOut"
+                          } 
+                        }}
                       >
                         {skill}
                       </motion.span>
