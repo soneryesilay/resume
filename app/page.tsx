@@ -510,12 +510,12 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
               </h2>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto space-y-12">
-              <motion.div 
+            <div className="max-w-3xl mx-auto space-y-12">              <motion.div 
                 className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800 transition-shadow duration-300"
-                initial={{ y: 100, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.2, delay: 0.2 }}                whileHover={{ 
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{ 
                   scale: 1.05, 
                   y: -8, 
                   boxShadow: "0 20px 35px -12px rgba(0,0,0,0.25)", 
