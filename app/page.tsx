@@ -450,23 +450,12 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                         transition: { duration: 0.2, ease: "easeOut" }
                       }}
                     >                      <div className="relative h-[280px] overflow-hidden">
-                        <motion.div
-                          initial={{ scale: 1.2, opacity: 0.8 }}
-                          animate={projectsRef.isInView ? { scale: 1, opacity: 1 } : {}}
-                          transition={{ 
-                            duration: 0.8, 
-                            delay: index * 0.1 + 0.6, 
-                            ease: "easeOut"
-                          }}
-                          className="h-full w-full"
-                        >
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-transform duration-700 hover:scale-110"
-                          />
-                        </motion.div>
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
                         <motion.div 
                           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
                           initial={{ opacity: 0 }}
