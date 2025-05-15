@@ -6,14 +6,46 @@ import { useInView } from 'framer-motion';
 // Custom hook for checking if an element is in view for scroll animations
 export const useScrollInView = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
+  
+  // Use Framer's useInView hook but only after initial render
+  const rawIsInView = useInView(ref, { once: true, amount: 0.2 });
+  
+  // Don't trigger "in view" during initial page load to prevent premature animations
+  useEffect(() => {
+    // Wait for initial animations to complete before enabling "in view" detection
+    const timer = setTimeout(() => {
+      setInitialRenderComplete(true);
+    }, 1500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  // Only consider elements "in view" after initial render is complete
+  const isInView = initialRenderComplete && rawIsInView;
   
   return { ref, isInView };
 };
 
 // Smooth scrolling for anchor links
 export const useSmoothScroll = () => {
+  // Track whether page has completed initial load
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+  
   useEffect(() => {
+    // Don't attach event listeners until the page has fully loaded
+    // This prevents unwanted scrolling during initial page animation
+    const timer = setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 2000); // Match this with loading animation duration
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  useEffect(() => {
+    // Only add scroll handlers after page is fully loaded
+    if (!isPageLoaded) return;
+    
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'A') {
@@ -21,9 +53,10 @@ export const useSmoothScroll = () => {
         if (href && href.startsWith('#')) {
           e.preventDefault();
           const targetElement = document.querySelector(href);
-          if (targetElement) {            window.scrollTo({
+          if (targetElement) {
+            window.scrollTo({
               top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
-              behavior: 'auto' // Anında geçiş için 'smooth' yerine 'auto' kullan
+              behavior: 'auto' // Use 'auto' instead of 'smooth' for immediate transition
             });
           }
         }
@@ -32,21 +65,32 @@ export const useSmoothScroll = () => {
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, []);
+  }, [isPageLoaded]);
 };
 
 // Parallax effect for elements when scrolling
 export const useParallax = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   
   useEffect(() => {
+    // Add a small delay before enabling scroll tracking to prevent unwanted animations during page load
+    const initialTimer = setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 1500);
+    
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!isInitialLoad) {
+        setScrollY(window.scrollY);
+      }
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(initialTimer);
+    };
+  }, [isInitialLoad]);
   
   return { scrollY };
 };
@@ -56,12 +100,22 @@ export const useLoadingState = () => {
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    // This simulates waiting for content to load
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
+    if (typeof window === 'undefined') return;
     
-    return () => clearTimeout(timer);
+    // Make sure the DOM is fully loaded before dismissing the loading screen
+    if (document.readyState === 'complete') {
+      setTimeout(() => setIsLoading(false), 1500);
+    } else {
+      // Wait for everything to load first
+      window.addEventListener('load', () => {
+        setTimeout(() => setIsLoading(false), 1500);
+      });
+    }
+    
+    // Ensure loading state is cleared if component unmounts
+    return () => {
+      window.removeEventListener('load', () => setIsLoading(false));
+    };
   }, []);
   
   return { isLoading };

@@ -186,21 +186,24 @@ export default function Home() {
 
         <main>
           {/* Hero Section */}
-          <section id="hero" className="container mx-auto py-16 px-4 text-center relative overflow-hidden" ref={heroRef.ref}>
-            {/* Parallax background elements */}
+          <section id="hero" className="container mx-auto py-16 px-4 text-center relative overflow-hidden" ref={heroRef.ref}>            {/* Parallax background elements */}
             <motion.div 
               className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#ff3d00]/10 to-[#5badff]/10 blur-3xl"
+              initial={{ y: 0, rotate: 0 }}
               style={{ 
-                y: scrollY * 0.2,
-                rotate: scrollY * 0.05,
+                y: isLoading ? 0 : scrollY * 0.2,
+                rotate: isLoading ? 0 : scrollY * 0.05,
               }}
+              transition={{ duration: 0.3 }}
             />
             <motion.div 
               className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#5badff]/10 to-[#ff3d00]/10 blur-3xl"
+              initial={{ y: 0, rotate: 0 }}
               style={{ 
-                y: scrollY * -0.1,
-                rotate: scrollY * -0.05,
+                y: isLoading ? 0 : scrollY * -0.1,
+                rotate: isLoading ? 0 : scrollY * -0.05,
               }}
+              transition={{ duration: 0.3 }}
             />
             
             <motion.div 
