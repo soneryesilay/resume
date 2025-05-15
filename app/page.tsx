@@ -425,8 +425,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Iyzico3DPay-Angular-Net"
                   }                ].map((project, index) => (
-                  <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                    <motion.div 
+                  <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">                    <motion.div 
                       className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg transform mx-2 cursor-pointer"
                       initial={{ 
                         opacity: 0, 
@@ -449,49 +448,52 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
                         transition: { duration: 0.2, ease: "easeOut" }
                       }}
-                    >                      <div className="relative h-[280px] overflow-hidden">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
-                        <motion.div 
-                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
-                          initial={{ opacity: 0 }}
-                          animate={projectsRef.isInView ? { opacity: 1 } : {}}
-                          transition={{ 
-                            duration: 0.5, 
-                            delay: index * 0.1 + 0.7
-                          }}
-                        >
-                          <motion.h3 
-                            className="text-lg font-bold text-white drop-shadow-md"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={projectsRef.isInView ? { y: 0, opacity: 1 } : {}}
+                    >
+                      <Link 
+                        href={project.github} 
+                        target="_blank"
+                        className="block"
+                      >
+                        <div className="relative h-[280px] overflow-hidden">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                          />
+                          <motion.div 
+                            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
+                            initial={{ opacity: 0 }}
+                            animate={projectsRef.isInView ? { opacity: 1 } : {}}
                             transition={{ 
                               duration: 0.5, 
-                              delay: index * 0.1 + 0.8
+                              delay: index * 0.1 + 0.7
                             }}
                           >
-                            {project.title.split(" ").slice(0, -1).join(" ")}{" "}
-                            <span style={{ color: project.accent }}>
-                              {project.title.split(" ").slice(-1)}
-                            </span>
-                          </motion.h3>
-                        </motion.div>
-                      </div>                      <div className="p-4 flex justify-between items-center">
-                        <motion.div
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={projectsRef.isInView ? { opacity: 1, x: 0 } : {}}
-                          transition={{ 
-                            duration: 0.5, 
-                            delay: index * 0.1 + 0.9
-                          }}
-                        >
-                          <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-1">{project.subtitle}</p>
-                          <p className="font-bold text-sm">{project.tech}</p>
-                        </motion.div>
+                            <motion.h3 
+                              className="text-lg font-bold text-white drop-shadow-md"
+                              initial={{ y: 20, opacity: 0 }}
+                              animate={projectsRef.isInView ? { y: 0, opacity: 1 } : {}}
+                              transition={{ 
+                                duration: 0.5, 
+                                delay: index * 0.1 + 0.8
+                              }}
+                            >
+                              {project.title.split(" ").slice(0, -1).join(" ")}{" "}
+                              <span style={{ color: project.accent }}>
+                                {project.title.split(" ").slice(-1)}
+                              </span>
+                            </motion.h3>
+                          </motion.div>
+                        </div>
+                        <div className="p-4 flex justify-between items-center">
+                          <div>
+                            <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-1">{project.subtitle}</p>
+                            <p className="font-bold text-sm">{project.tech}</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <div className="absolute bottom-4 right-6">
                         <motion.div 
                           whileHover={{ scale: 1.2, rotate: 5 }} 
                           whileTap={{ scale: 0.9 }}
@@ -671,8 +673,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* JWT Authentication Blog Post */}
-              <motion.div 
+              {/* JWT Authentication Blog Post */}              <motion.div 
               className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -684,42 +685,49 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
               >
-              <div className="relative h-[200px] overflow-hidden">
-                <Image
-                src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*AALox1K041nEYILxKsqcGg.jpeg"
-                alt="JWT Authentication Blog"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              </div>
-              <div className="p-8">
-                <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">10 Adımda .NET Core 8.0 ile JWT Tabanlı Kimlik Doğrulama</h3>
-                <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                ASP.NET Core 8.0 ile JWT tabanlı kimlik doğrulama sistemi oluşturma hakkında detaylı bir rehber. Adım adım uygulamalı örneklerle kimlik doğrulama sistemini nasıl kurabilirsiniz.
-                </p>
-                <motion.div 
-                className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
-                whileHover={{ x: 5 }} 
-                transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
-                >
                 <Link 
                   href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937" 
                   target="_blank"
-                  className="inline-flex items-center"
+                  className="block"
                 >
-                  Read on Medium
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <div className="relative h-[200px] overflow-hidden">
+                    <Image
+                    src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*AALox1K041nEYILxKsqcGg.jpeg"
+                    alt="JWT Authentication Blog"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  </div>
+                  <div className="p-8">
+                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">10 Adımda .NET Core 8.0 ile JWT Tabanlı Kimlik Doğrulama</h3>
+                    <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
+                    ASP.NET Core 8.0 ile JWT tabanlı kimlik doğrulama sistemi oluşturma hakkında detaylı bir rehber. Adım adım uygulamalı örneklerle kimlik doğrulama sistemini nasıl kurabilirsiniz.
+                    </p>
+                  </div>
                 </Link>
-                </motion.div>
-              </div>
+                <div className="px-8 pb-8 -mt-2">
+                  <motion.div 
+                  className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
+                  whileHover={{ x: 5 }} 
+                  transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
+                  >
+                  <Link 
+                    href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937" 
+                    target="_blank"
+                    className="inline-flex items-center"
+                  >
+                    Read on Medium
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                  </motion.div>
+                </div>
               </motion.div>
               
-              {/* CRUD with .NET Core and React Blog Post */}
-              <motion.div 
+              {/* CRUD with .NET Core and React Blog Post */}              <motion.div 
                 className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -731,21 +739,29 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
-                <div className="relative h-[200px] overflow-hidden">
-                  <Image
-                    src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*l_0erh4TrueVUeXBdd0pTQ.png"
-                    alt="CRUD with .NET Core and React Blog"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                </div>
-                <div className="p-8">
-                  <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">.NET Core 8.0 ve React 19.1 ile CRUD İşlemleri</h3>
-                  <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                    Modern web uygulamaları geliştirmek için .NET Core 8.0 ve React 19.1 kullanarak CRUD (Create, Read, Update, Delete) işlemlerini nasıl yapacağınızı anlatan kapsamlı bir rehber.
-                  </p>
+                <Link 
+                  href="https://medium.com/@soneryesilay/net-core-8-0-ve-react-19-1-ile-crud-i%CC%87%C5%9Flemleri-f3ea8568e535" 
+                  target="_blank"
+                  className="block"
+                >
+                  <div className="relative h-[200px] overflow-hidden">
+                    <Image
+                      src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*l_0erh4TrueVUeXBdd0pTQ.png"
+                      alt="CRUD with .NET Core and React Blog"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  </div>
+                  <div className="p-8">
+                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">.NET Core 8.0 ve React 19.1 ile CRUD İşlemleri</h3>
+                    <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
+                      Modern web uygulamaları geliştirmek için .NET Core 8.0 ve React 19.1 kullanarak CRUD (Create, Read, Update, Delete) işlemlerini nasıl yapacağınızı anlatan kapsamlı bir rehber.
+                    </p>
+                  </div>
+                </Link>
+                <div className="px-8 pb-8 -mt-2">
                   <motion.div 
                     className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
                     whileHover={{ x: 5 }} 
@@ -765,8 +781,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 </div>
               </motion.div>
               
-              {/* Blog Post Placeholder */}
-              <motion.div 
+              {/* Blog Post Placeholder */}              <motion.div 
                 className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -778,37 +793,45 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
-                <div className="relative h-[200px] overflow-hidden">
-                <Image
-                  src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
-                  alt="Future Blog Post"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                </div>
-                <div className="p-8">
-                <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
-                <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                  More technical tutorials and articles coming soon on my Medium profile.
-                </p>
-                <motion.div 
-                  className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
-                  whileHover={{ x: 5 }} 
-                  transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
-                >
-                  <Link 
+                <Link 
                   href="https://medium.com/@soneryesilay" 
                   target="_blank"
-                  className="inline-flex items-center"
+                  className="block"
+                >
+                  <div className="relative h-[200px] overflow-hidden">
+                  <Image
+                    src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
+                    alt="Future Blog Post"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  </div>
+                  <div className="p-8">
+                  <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
+                  <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
+                    More technical tutorials and articles coming soon on my Medium profile.
+                  </p>
+                  </div>
+                </Link>
+                <div className="px-8 pb-8 -mt-2">
+                  <motion.div 
+                    className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
+                    whileHover={{ x: 5 }} 
+                    transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
                   >
-                  Read on Medium
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                  </Link>
-                </motion.div>
+                    <Link 
+                    href="https://medium.com/@soneryesilay" 
+                    target="_blank"
+                    className="inline-flex items-center"
+                    >
+                    Read on Medium
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                    </Link>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
