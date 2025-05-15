@@ -64,7 +64,7 @@ export default function Home() {
       pauseTimeout = setTimeout(() => {
         userInteracted = false;
         intervalId = startAutoScroll();
-      }, 10000);
+      }, 500);
     };
     
     // Register all interaction events
@@ -212,14 +212,13 @@ export default function Home() {
               animate={heroRef.isInView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: isLoading ? 2 : 0.2 }}
             >
-              <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-gradient-to-r from-[#ff3d00] to-[#5badff]">
-                <motion.div 
+              <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-gradient-to-r from-[#ff3d00] to-[#5badff]">                <motion.div 
                   className="absolute inset-[3px] rounded-full overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
                   <Image 
-                    src="https://avatars.githubusercontent.com/u/122547220?s=400&u=0bb5982811c66b03c9a6b478bf805bbcfc7fcb8f&v=4" 
+                    src="/me.jpeg" 
                     alt="Soner Yeşilay" 
                     width={154} 
                     height={154} 
