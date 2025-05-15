@@ -485,38 +485,13 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                               </span>
                             </motion.h3>
                           </motion.div>
-                        </div>
-                        <div className="p-4 flex justify-between items-center">
+                        </div>                        <div className="p-4 flex justify-between items-center">
                           <div>
                             <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-1">{project.subtitle}</p>
                             <p className="font-bold text-sm">{project.tech}</p>
                           </div>
                         </div>
                       </Link>
-                      <div className="absolute bottom-4 right-6">
-                        <motion.div 
-                          whileHover={{ scale: 1.2, rotate: 5 }} 
-                          whileTap={{ scale: 0.9 }}
-                          initial={{ opacity: 0, scale: 0.5 }}
-                          animate={projectsRef.isInView ? { opacity: 1, scale: 1 } : {}}
-                          transition={{ 
-                            duration: 0.5, 
-                            delay: index * 0.1 + 1.0,
-                            type: "spring",
-                            stiffness: 260,
-                            damping: 20
-                          }}
-                        >
-                          <Link 
-                            href={project.github} 
-                            target="_blank" 
-                            className={`w-10 h-10 rounded-full text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-md`}
-                            style={{ backgroundColor: project.accent }}
-                          >
-                            <Github className="w-4 h-4" />
-                          </Link>
-                        </motion.div>
-                      </div>
                     </motion.div>
                   </CarouselItem>
                 ))}
