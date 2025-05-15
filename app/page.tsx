@@ -392,14 +392,13 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     image: "/projects/hotelmanagement.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Net-HotelApi-Project"
-                  },
-                  {
+                  },                  {
                     title: "Portfolio Website",
                     subtitle: "FRONT-END PROJECT",
                     tech: "Built with Next.js and Tailwind CSS",
                     image: "https://i.hizliresim.com/b4tumam.png",
                     accent: "#ff3d00",
-                    github:"",
+                    github:"#",
                   },
                   {
                     title: "Book Store Web API",
@@ -448,10 +447,10 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
                         transition: { duration: 0.2, ease: "easeOut" }
                       }}
-                    >
-                      <Link 
+                    >                      <Link 
                         href={project.github} 
-                        target="_blank"
+                        target={project.github === "#" ? "_self" : "_blank"}
+                        onClick={project.github === "#" ? (e) => e.preventDefault() : undefined}
                         className="block"
                       >
                         <div className="relative h-[280px] overflow-hidden">
