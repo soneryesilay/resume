@@ -399,7 +399,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     tech: "Built with Next.js and Tailwind CSS",
                     image: "https://i.hizliresim.com/b4tumam.png",
                     accent: "#ff3d00",
-                    github: "https://github.com/soneryesilay/resume"
+                    github:"",
                   },
                   {
                     title: "Book Store Web API",
