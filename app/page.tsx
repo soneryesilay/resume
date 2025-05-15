@@ -142,9 +142,8 @@ export default function Home() {
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex gap-6 items-center">
-              {[
-                { href: "/", label: "Home" },
+            <div className="hidden md:flex gap-6 items-center">              {[
+                { href: "#hero", label: "Home" },
                 { href: "#projects", label: "Projects" },
                 { href: "#experience", label: "Experience" },
                 { href: "#blogs", label: "Blogs" },
@@ -154,10 +153,24 @@ export default function Home() {
                   key={item.label}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                >
-                  <Link 
+                >                  <Link 
                     href={item.href} 
                     className="relative group font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-[#5badff] dark:hover:text-[#5badff] px-1 py-2"
+                    onClick={(e) => {
+                      // Eğer anchor link ise özel işleme yap
+                      if (item.href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = item.href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {                          // Anında geçiş sağla
+                          window.scrollTo({
+                            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+                            behavior: 'auto'
+                          });
+                        }
+                      }
+                    }}
                   >
                     {item.label}
                     <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-[#ff3d00] to-[#5badff] transform scale-x-0 transition-transform group-hover:scale-x-100" />
@@ -173,7 +186,7 @@ export default function Home() {
 
         <main>
           {/* Hero Section */}
-          <section className="container mx-auto py-16 px-4 text-center relative overflow-hidden" ref={heroRef.ref}>
+          <section id="hero" className="container mx-auto py-16 px-4 text-center relative overflow-hidden" ref={heroRef.ref}>
             {/* Parallax background elements */}
             <motion.div 
               className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#ff3d00]/10 to-[#5badff]/10 blur-3xl"
@@ -289,7 +302,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
           </section>
 
           {/* Tech Stack */}
-          <section className="container mx-auto py-16 px-4 text-center" ref={techStackRef.ref}>
+          <section id="tech" className="container mx-auto py-16 px-4 text-center" ref={techStackRef.ref}>
             <motion.h2 
               className="text-xl font-medium mb-10 text-gray-600 dark:text-[#8491a0]"
               initial={{ y: 50, opacity: 0 }}
@@ -411,42 +424,98 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     image: "/projects/IyzicoPay.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Iyzico3DPay-Angular-Net"
-                  }
-                ].map((project, index) => (
+                  }                ].map((project, index) => (
                   <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <motion.div 
-                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg transform mx-2 cursor-pointer" // Adjusted className
+                      className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg transform mx-2 cursor-pointer"
+                      initial={{ 
+                        opacity: 0, 
+                        y: 50,
+                        scale: 0.9
+                      }}
+                      animate={projectsRef.isInView ? { 
+                        opacity: 1, 
+                        y: 0,
+                        scale: 1
+                      } : {}}
+                      transition={{ 
+                        duration: 0.7, 
+                        delay: index * 0.1 + 0.3,
+                        ease: "easeOut"
+                      }}
                       whileHover={{ 
                         scale: 1.03, 
                         y: -10,
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
-                        transition: { duration: 0.2, ease: "easeOut" } // Matched blog's whileHover, reduced duration
+                        transition: { duration: 0.2, ease: "easeOut" }
                       }}
-                      // Removed the explicit transition={{ duration: 0.3 }} from here to let whileHover's transition dominate for hover.
-                      // If there are other transitions intended for this div, they might need specific setup.
-                    >
-                      <div className="relative h-[280px] overflow-hidden">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-700 hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4">
-                          <h3 className="text-lg font-bold text-white drop-shadow-md">
+                    >                      <div className="relative h-[280px] overflow-hidden">
+                        <motion.div
+                          initial={{ scale: 1.2, opacity: 0.8 }}
+                          animate={projectsRef.isInView ? { scale: 1, opacity: 1 } : {}}
+                          transition={{ 
+                            duration: 0.8, 
+                            delay: index * 0.1 + 0.6, 
+                            ease: "easeOut"
+                          }}
+                          className="h-full w-full"
+                        >
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-700 hover:scale-110"
+                          />
+                        </motion.div>
+                        <motion.div 
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
+                          initial={{ opacity: 0 }}
+                          animate={projectsRef.isInView ? { opacity: 1 } : {}}
+                          transition={{ 
+                            duration: 0.5, 
+                            delay: index * 0.1 + 0.7
+                          }}
+                        >
+                          <motion.h3 
+                            className="text-lg font-bold text-white drop-shadow-md"
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={projectsRef.isInView ? { y: 0, opacity: 1 } : {}}
+                            transition={{ 
+                              duration: 0.5, 
+                              delay: index * 0.1 + 0.8
+                            }}
+                          >
                             {project.title.split(" ").slice(0, -1).join(" ")}{" "}
                             <span style={{ color: project.accent }}>
                               {project.title.split(" ").slice(-1)}
                             </span>
-                          </h3>
-                        </div>
-                      </div>
-                      <div className="p-4 flex justify-between items-center">
-                        <div>
+                          </motion.h3>
+                        </motion.div>
+                      </div>                      <div className="p-4 flex justify-between items-center">
+                        <motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={projectsRef.isInView ? { opacity: 1, x: 0 } : {}}
+                          transition={{ 
+                            duration: 0.5, 
+                            delay: index * 0.1 + 0.9
+                          }}
+                        >
                           <p className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-1">{project.subtitle}</p>
                           <p className="font-bold text-sm">{project.tech}</p>
-                        </div>
-                        <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+                        </motion.div>
+                        <motion.div 
+                          whileHover={{ scale: 1.2, rotate: 5 }} 
+                          whileTap={{ scale: 0.9 }}
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={projectsRef.isInView ? { opacity: 1, scale: 1 } : {}}
+                          transition={{ 
+                            duration: 0.5, 
+                            delay: index * 0.1 + 1.0,
+                            type: "spring",
+                            stiffness: 260,
+                            damping: 20
+                          }}
+                        >
                           <Link 
                             href={project.github} 
                             target="_blank" 
@@ -461,15 +530,31 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              
-              <div className="flex justify-center gap-4 mt-8">
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <motion.div 
+                className="flex justify-center gap-4 mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={projectsRef.isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1 }} 
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ x: -20 }}
+                  animate={projectsRef.isInView ? { x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
                   <CarouselPrevious className="static translate-y-0 mx-2" />
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <motion.div 
+                  whileHover={{ scale: 1.1 }} 
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ x: 20 }}
+                  animate={projectsRef.isInView ? { x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
                   <CarouselNext className="static translate-y-0 mx-2" />
                 </motion.div>
-              </div>
+              </motion.div>
             </Carousel>
             
             <motion.div 

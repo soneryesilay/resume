@@ -21,10 +21,9 @@ export const useSmoothScroll = () => {
         if (href && href.startsWith('#')) {
           e.preventDefault();
           const targetElement = document.querySelector(href);
-          if (targetElement) {
-            window.scrollTo({
+          if (targetElement) {            window.scrollTo({
               top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
-              behavior: 'smooth'
+              behavior: 'auto' // Anında geçiş için 'smooth' yerine 'auto' kullan
             });
           }
         }

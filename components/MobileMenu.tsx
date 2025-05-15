@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { motion } from "framer-motion";
 
 const menuItems = [
-  { href: "/", label: "Home" },
+  { href: "#hero", label: "Home" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#blogs", label: "Blogs" },
@@ -16,9 +16,27 @@ const menuItems = [
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
-
-  const handleLinkClick = () => {
+  const handleLinkClick = (href: string) => {
+    // Önce menüyü kapat
     setOpen(false);
+    
+    // Eğer anchor link ise, scroll işlemini yap
+    if (href.startsWith('#')) {
+      // Menünün tamamen kapanması için biraz bekle
+      setTimeout(() => {
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Performans için requestAnimationFrame kullan
+          requestAnimationFrame(() => {            window.scrollTo({
+              top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
+              behavior: 'auto' // 'smooth' yerine 'auto' kullanarak anında geçiş sağla
+            });
+          });
+        }
+      }, 10); // Minimal gecikme ile neredeyse anında geçiş
+    }
   };
 
   return (
@@ -60,10 +78,12 @@ export default function MobileMenu() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 + 0.2, duration: 0.3 }}
-                >
-                  <Link
+                >                  <Link
                     href={item.href}
-                    onClick={handleLinkClick}
+                    onClick={(e) => {
+                      e.preventDefault(); // Varsayılan davranışı engelle
+                      handleLinkClick(item.href);
+                    }}
                     className="text-xl font-medium text-gray-800 dark:text-white hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors relative inline-block"
                   >
                     {item.label}
