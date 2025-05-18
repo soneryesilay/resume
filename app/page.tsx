@@ -425,6 +425,14 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     image: "/projects/IyzicoPay.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Iyzico3DPay-Angular-Net"
+                  },
+                  {
+                    title: "Planning App",
+                    subtitle: "FRONT-END PROJECT",
+                    tech: "Built with Next.js, TypeScript, React.js",
+                    image: "/projects/zamanyonetimi.png",
+                    accent: "#ff3d00", // You might want to change this accent color
+                    github: "https://github.com/soneryesilay/PlanningApp"
                   }                ].map((project, index) => (
                   <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">                    <motion.div 
                       className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg transform mx-2 cursor-pointer"
