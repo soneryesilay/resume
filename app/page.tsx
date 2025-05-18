@@ -385,7 +385,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                     tech: "Built with .NET Core Web Api and MVC",
                     image: "/projects/carrepair.jpg",
                     accent: "#ff3d00",
-                    github: "https://github.com/soneryesilay/CarRepairReservationSystem"
+                    github: "https://www.zamanyonetimi.com/"
                   },
                   {
                     title: "Hotel Management System",
