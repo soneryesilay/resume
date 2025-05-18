@@ -292,7 +292,7 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  href="https://drive.google.com/file/d/1WwGEZoDe39LoH6CuuOonDAhOXf7vd229/view"
+                  href="https://drive.google.com/file/d/176r4ud6jKyK1iLyZ1DjW0xp1EgtULlf-/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 rounded-full border-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-[#191919] hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white transition-colors"
