@@ -100,6 +100,11 @@ export default function Home() {
   const blogsRef = useScrollInView();
   const contactRef = useScrollInView();
 
+  // Scroll to top on page load/refresh
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     // Update time only on client-side
     const updateTime = () => {
@@ -241,9 +246,11 @@ export default function Home() {
                     sequence={[
                       'Software Dev.',
                       2000,
-                      'Programmer',
+                      'Automation.',
                       2000,
-                      '.NET Core Dev.',
+                      'Backend Dev.',
+                      2000,
+                      'Programmer',
                       2000
                     ]}
                     wrapper="span"
@@ -262,7 +269,7 @@ export default function Home() {
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: isLoading ? 2.4 : 0.6 }}
             >
-Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya University (Jan 2025) with hands-on experience in backend development from a 5-month internship. I’m passionate about applying my strong foundation in API design, database management, and clean-code principles to real-world projects, and I regularly share my work on GitHub and Medium. I aim to advance my career in software development by building scalable, sustainable solutions—feel free to explore my profiles or get in touch!            </motion.p>
+I'm a software developer who builds end-to-end products — from backend APIs to frontend UIs — with a strong focus on quality and maintainability. I also contribute on the QA side with solid test design and automation where it adds real value. Currently working as a Test Automation Engineer at Hugin Ödeme Sistemleri. Feel free to explore my GitHub and Medium profiles or get in touch!            </motion.p>
 
             <motion.div 
               className="flex items-center justify-center space-x-4"
@@ -321,10 +328,10 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
             >
               {[
                 "C#",
-                ".NET CORE",
-                "MVC",
-                "MSSQL",
-                "AWS"
+                "Python",
+                "SQL",
+                "Selenium",
+                "React"
               ].map((tech, index) => (
                 <motion.div 
                   key={tech}
@@ -570,24 +577,154 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
               </h2>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto space-y-12">              <motion.div 
-                className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-800 transition-shadow duration-300"
+            <div className="max-w-3xl mx-auto space-y-12">
+              {/* Experience 3 - Hugin Ödeme Sistemleri (Güncel iş - EN ÜSTTE) */}
+              <motion.div 
+                className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 group cursor-pointer"
                 initial={{ y: 50, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ 
-                  scale: 1.05, 
-                  y: -8, 
-                  boxShadow: "0 20px 35px -12px rgba(0,0,0,0.25)", 
-                  transition: { 
-                    duration: 0.2, 
-                    ease: "easeOut"
-                  } 
+                  scale: 1.03, 
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
                 <div className="flex-shrink-0">
                   <motion.div 
-                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"                    whileHover={{ 
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      y: -2, 
+                      transition: { 
+                        duration: 0.15, 
+                        ease: "easeOut"
+                      } 
+                    }}
+                  >
+                    <span className="font-bold text-xl">3</span>
+                  </motion.div>
+                </div>
+                <div className="flex-grow">
+                  <div className="flex flex-col sm:flex-row justify-between mb-2">
+                    <h3 className="text-xl font-bold text-gray-300">Test Automation Engineer at Hugin Ödeme Sistemleri</h3>
+                    <span className="text-gray-500 dark:text-[#8491a0]">Jul 2025 - Present</span>
+                  </div>
+                  <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
+                    Working as a full-time Test Automation Engineer at Hugin Ödeme Sistemleri in Istanbul. Developing and maintaining test automation frameworks, ensuring software quality through comprehensive testing strategies.
+                  </p>
+                  
+                  <motion.div 
+                    className="mt-4 flex gap-2 flex-wrap"
+                    initial={{ opacity: 0 }}
+                    animate={experienceRef.isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    {["Test Automation", "Python", "Selenium", "Appium", "API Testing"].map((skill, index) => (
+                      <motion.span 
+                        key={skill}
+                        className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.7 }}
+                        whileHover={{ 
+                          scale: 1.1, 
+                          transition: { 
+                            duration: 0.1, 
+                            ease: "easeOut"
+                          } 
+                        }}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Experience 2 - AkademiQ.net (ORTADA) */}
+              <motion.div 
+                className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 group cursor-pointer"
+                initial={{ y: 50, opacity: 0 }}
+                animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                whileHover={{ 
+                  scale: 1.03, 
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+              >
+                <div className="flex-shrink-0">
+                  <motion.div 
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      y: -2, 
+                      transition: { 
+                        duration: 0.15, 
+                        ease: "easeOut"
+                      } 
+                    }}
+                  >
+                    <span className="font-bold text-xl">2</span>
+                  </motion.div>
+                </div>
+                <div className="flex-grow">
+                  <div className="flex flex-col sm:flex-row justify-between mb-2">
+                    <h3 className="text-xl font-bold text-gray-300">Back-End Developer - Intern at AkademiQ.net</h3>
+                    <span className="text-gray-500 dark:text-[#8491a0]">Nov 2024 - May 2025</span>
+                  </div>
+                  <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
+                    Accepted with a full scholarship to the C# Programming Introduction training camp organized by Acunmedya Akademi. Worked remotely on back-end development projects using C# and Rapid API.
+                  </p>
+                  
+                  <motion.div 
+                    className="mt-4 flex gap-2 flex-wrap"
+                    initial={{ opacity: 0 }}
+                    animate={experienceRef.isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                  >
+                    {["C#", "Rapid API", ".NET Core", "REST API"].map((skill, index) => (
+                      <motion.span 
+                        key={skill}
+                        className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.9 }}
+                        whileHover={{ 
+                          scale: 1.1, 
+                          transition: { 
+                            duration: 0.1, 
+                            ease: "easeOut"
+                          } 
+                        }}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Experience 1 - AkıllıPhone (İlk iş - EN ALTTA) */}
+              <motion.div 
+                className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 group cursor-pointer"
+                initial={{ y: 50, opacity: 0 }}
+                animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                whileHover={{ 
+                  scale: 1.03, 
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+              >
+                <div className="flex-shrink-0">
+                  <motion.div 
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
+                    whileHover={{ 
                       scale: 1.1, 
                       y: -2, 
                       transition: { 
@@ -601,26 +738,27 @@ Hello, I’m Soner Yeşilay, a Computer Programming graduate from Trakya Univers
                 </div>
                 <div className="flex-grow">
                   <div className="flex flex-col sm:flex-row justify-between mb-2">
-                    <h3 className="text-xl font-bold text-gray-300">Back-end Developer - Intern at AkıllıPhone</h3>
-                    <span className="text-gray-500 dark:text-[#8491a0]">2024 Feb - 2024 Jul</span>
+                    <h3 className="text-xl font-bold text-gray-300">Back-End Developer - Intern at AkıllıPhone</h3>
+                    <span className="text-gray-500 dark:text-[#8491a0]">Feb 2024 - Jun 2024</span>
                   </div>
                   <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
-                    I worked on 3 projects using C# and .NET Core, optimized database queries for 15% better performance, and built a microservice with senior guidance. Gained practical experience through team collaboration and code reviews while contributing to the main company project.
+                    Gained foundational knowledge of back-end development using .NET Core. Analyzed various applications to deepen my understanding and developed my own applications to apply and enhance my skills.
                   </p>
                   
                   <motion.div 
                     className="mt-4 flex gap-2 flex-wrap"
                     initial={{ opacity: 0 }}
                     animate={experienceRef.isInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.5, delay: 0.6 }}
+                    transition={{ duration: 0.5, delay: 1.0 }}
                   >
-                    {["C#", ".NET Core", "MSSQL", "Microservice"].map((skill, index) => (
+                    {["Software Development Methodologies", ".NET Core", "C#", "MSSQL"].map((skill, index) => (
                       <motion.span 
                         key={skill}
                         className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
                         initial={{ opacity: 0, x: -20 }}
                         animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.4, delay: index * 0.1 + 0.7 }}                        whileHover={{ 
+                        transition={{ duration: 0.4, delay: index * 0.1 + 1.1 }}
+                        whileHover={{ 
                           scale: 1.1, 
                           transition: { 
                             duration: 0.1, 

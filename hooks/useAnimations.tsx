@@ -16,7 +16,7 @@ export const useScrollInView = () => {
     // Wait for initial animations to complete before enabling "in view" detection
     const timer = setTimeout(() => {
       setInitialRenderComplete(true);
-    }, 1500);
+    }, 1300);
     
     return () => clearTimeout(timer);
   }, []);
@@ -37,7 +37,7 @@ export const useSmoothScroll = () => {
     // This prevents unwanted scrolling during initial page animation
     const timer = setTimeout(() => {
       setIsPageLoaded(true);
-    }, 2000); // Match this with loading animation duration
+    }, 1400); // Match this with loading animation duration
     
     return () => clearTimeout(timer);
   }, []);
@@ -77,7 +77,7 @@ export const useParallax = () => {
     // Add a small delay before enabling scroll tracking to prevent unwanted animations during page load
     const initialTimer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 1500);
+    }, 1300);
     
     const handleScroll = () => {
       if (!isInitialLoad) {
@@ -104,11 +104,11 @@ export const useLoadingState = () => {
     
     // Make sure the DOM is fully loaded before dismissing the loading screen
     if (document.readyState === 'complete') {
-      setTimeout(() => setIsLoading(false), 1500);
+      setTimeout(() => setIsLoading(false), 1200);
     } else {
       // Wait for everything to load first
       window.addEventListener('load', () => {
-        setTimeout(() => setIsLoading(false), 1500);
+        setTimeout(() => setIsLoading(false), 1200);
       });
     }
     
