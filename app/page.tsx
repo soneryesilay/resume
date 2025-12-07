@@ -139,7 +139,7 @@ export default function Home() {
           className="container mx-auto py-4 px-4 sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-[#191919]/70 border-b border-gray-200 dark:border-gray-800"
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: isLoading ? 1.8 : 0 }}
+          transition={{ duration: 0.5, delay: isLoading ? 0.3 : 0 }}
         >
           <nav className="flex justify-between items-center">
             <div className="flex items-center gap-2">
@@ -211,11 +211,11 @@ export default function Home() {
               transition={{ duration: 0.3 }}
             />
             
-            <motion.div 
+            <motion.div
               className="flex justify-center mb-8"
               initial={{ scale: 0, opacity: 0 }}
               animate={heroRef.isInView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: isLoading ? 2 : 0.2 }}
+              transition={{ duration: 0.6, delay: isLoading ? 0.2 : 0.2 }}
             >
               <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-gradient-to-r from-[#ff3d00] to-[#5badff]">                <motion.div 
                   className="absolute inset-[3px] rounded-full overflow-hidden"
@@ -236,7 +236,7 @@ export default function Home() {
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: isLoading ? 2.2 : 0.4 }}
+              transition={{ duration: 0.7, delay: isLoading ? 0.3 : 0.4 }}
             >
               <h1 className="text-5xl font-bold mb-4">
                 Soner Yeşilay
@@ -267,7 +267,7 @@ export default function Home() {
               className="max-w-3xl mx-auto text-gray-400 dark:text-[#c5c5c5] mb-8 leading-relaxed"
               initial={{ y: 50, opacity: 0 }}
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: isLoading ? 2.4 : 0.6 }}
+              transition={{ duration: 0.7, delay: isLoading ? 0.5 : 0.6 }}
             >
 I'm a software developer who builds end-to-end products — from backend APIs to frontend UIs — with a strong focus on quality and maintainability. I also contribute on the QA side with solid test design and automation where it adds real value. Currently working as a Test Automation Engineer at Hugin Ödeme Sistemleri. Feel free to explore my GitHub and Medium profiles or get in touch!            </motion.p>
 
@@ -275,7 +275,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               className="flex items-center justify-center space-x-4"
               initial={{ y: 50, opacity: 0 }}
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: isLoading ? 2.6 : 0.8 }}
+              transition={{ duration: 0.7, delay: isLoading ? 0.7 : 0.8 }}
             >
               <motion.div 
                 whileHover={{ scale: 1.05 }} 
@@ -461,8 +461,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                       whileHover={{ 
                         scale: 1.03, 
                         y: -10,
-                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
-                        transition: { duration: 0.2, ease: "easeOut" }
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                        transition: { duration: 0.3, ease: "easeOut" }
                       }}
                     >                      <Link 
                         href={project.github} 
