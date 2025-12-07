@@ -299,7 +299,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  href="https://drive.google.com/file/d/18sT63wNy4dmfPesveoWIQ4cBBn72nnov/view"
+                  href="https://drive.google.com/file/d/1ZD9iITg4uNc-vJelHdX9aUVx95EHmvMn/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 rounded-full border-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-[#191919] hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white transition-colors"
