@@ -8,7 +8,7 @@ import { ThemeToggle } from "../components/theme-toggle"
 import MobileMenu from "@/components/MobileMenu"
 import { TypeAnimation } from 'react-type-animation'
 import { useState, useEffect } from 'react'
-import { 
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -26,15 +26,15 @@ export default function Home() {
   const { scrollY } = useParallax();
   useSmoothScroll();
   const [api, setApi] = useState<CarouselApi>();
-  
+
   // Auto-scroll effect
   useEffect(() => {
     if (!api) return;
-    
+
     // Create variable to track if user has interacted with carousel
     let userInteracted = false;
     let pauseTimeout: NodeJS.Timeout;
-    
+
     // Set up auto-scroll interval with a longer initial delay
     const startAutoScroll = () => {
       return setInterval(() => {
@@ -48,42 +48,42 @@ export default function Home() {
         }
       }, 5000); // Increased from 3000 to 5000 for better viewing experience
     };
-    
+
     let intervalId = startAutoScroll();
-    
+
     // Event handlers to detect user interaction
     const onUserInteraction = () => {
       // Clear existing pause timeout
       if (pauseTimeout) clearTimeout(pauseTimeout);
-      
+
       // Stop auto-scrolling immediately
       userInteracted = true;
       clearInterval(intervalId);
-      
+
       // Set a timeout to resume auto-scroll after longer inactivity (10 seconds)
       pauseTimeout = setTimeout(() => {
         userInteracted = false;
         intervalId = startAutoScroll();
       }, 500);
     };
-    
+
     // Register all interaction events
     const elm = api.rootNode();
-    
+
     // Mouse events
     elm.addEventListener('mouseenter', onUserInteraction);
     elm.addEventListener('mousemove', onUserInteraction);
     elm.addEventListener('click', onUserInteraction);
-    
+
     // Touch events for mobile
     elm.addEventListener('touchstart', onUserInteraction);
     elm.addEventListener('touchmove', onUserInteraction);
-    
+
     // Clean up all event listeners on component unmount
     return () => {
       clearInterval(intervalId);
       if (pauseTimeout) clearTimeout(pauseTimeout);
-      
+
       elm.removeEventListener('mouseenter', onUserInteraction);
       elm.removeEventListener('mousemove', onUserInteraction);
       elm.removeEventListener('click', onUserInteraction);
@@ -108,7 +108,7 @@ export default function Home() {
   useEffect(() => {
     // Update time only on client-side
     const updateTime = () => {
-      const time = new Date().toLocaleTimeString('en-US', { 
+      const time = new Date().toLocaleTimeString('en-US', {
         timeZone: 'Europe/Istanbul',
         hour: '2-digit',
         minute: '2-digit',
@@ -116,13 +116,13 @@ export default function Home() {
       });
       setCurrentTime(time);
     };
-    
+
     // Initial update
     updateTime();
-    
+
     // Update time every minute
     const interval = setInterval(updateTime, 60000);
-    
+
     // Cleanup on unmount
     return () => clearInterval(interval);
   }, []);
@@ -132,10 +132,10 @@ export default function Home() {
       <AnimatePresence>
         {isLoading && <LoadingAnimation />}
       </AnimatePresence>
-      
+
       <div className="min-h-screen bg-[#191919] dark:bg-[#191919] bg-white text-black dark:text-white">
         {/* Navigation */}
-        <motion.header 
+        <motion.header
           className="container mx-auto py-4 px-4 sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-[#191919]/70 border-b border-gray-200 dark:border-gray-800"
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -145,43 +145,43 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <ThemeToggle />
             </div>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-6 items-center">              {[
-                { href: "#hero", label: "Home" },
-                { href: "#projects", label: "Projects" },
-                { href: "#experience", label: "Experience" },
-                { href: "#blogs", label: "Blogs" },
-                { href: "#contact", label: "Contact" }
-              ].map((item) => (
-                <motion.div
-                  key={item.label}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >                  <Link 
-                    href={item.href} 
-                    className="relative group font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-[#5badff] dark:hover:text-[#5badff] px-1 py-2"
-                    onClick={(e) => {
-                      // Eğer anchor link ise özel işleme yap
-                      if (item.href.startsWith('#')) {
-                        e.preventDefault();
-                        const targetId = item.href.substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        
-                        if (targetElement) {                          // Anında geçiş sağla
-                          window.scrollTo({
-                            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
-                            behavior: 'auto'
-                          });
-                        }
-                      }
-                    }}
-                  >
-                    {item.label}
-                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-[#ff3d00] to-[#5badff] transform scale-x-0 transition-transform group-hover:scale-x-100" />
-                  </Link>
-                </motion.div>
-              ))}
+              { href: "#hero", label: "Home" },
+              { href: "#projects", label: "Projects" },
+              { href: "#experience", label: "Experience" },
+              { href: "#blogs", label: "Blogs" },
+              { href: "#contact", label: "Contact" }
+            ].map((item) => (
+              <motion.div
+                key={item.label}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >                  <Link
+                href={item.href}
+                className="relative group font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-[#5badff] dark:hover:text-[#5badff] px-1 py-2"
+                onClick={(e) => {
+                  // Eğer anchor link ise özel işleme yap
+                  if (item.href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = item.href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {                          // Anında geçiş sağla
+                      window.scrollTo({
+                        top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+                        behavior: 'auto'
+                      });
+                    }
+                  }
+                }}
+              >
+                  {item.label}
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-[#ff3d00] to-[#5badff] transform scale-x-0 transition-transform group-hover:scale-x-100" />
+                </Link>
+              </motion.div>
+            ))}
             </div>
 
             {/* Mobile Menu */}
@@ -192,44 +192,44 @@ export default function Home() {
         <main>
           {/* Hero Section */}
           <section id="hero" className="container mx-auto py-16 px-4 text-center relative overflow-hidden" ref={heroRef.ref}>            {/* Parallax background elements */}
-            <motion.div 
+            <motion.div
               className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#ff3d00]/10 to-[#5badff]/10 blur-3xl"
               initial={{ y: 0, rotate: 0 }}
-              style={{ 
+              style={{
                 y: isLoading ? 0 : scrollY * 0.2,
                 rotate: isLoading ? 0 : scrollY * 0.05,
               }}
               transition={{ duration: 0.3 }}
             />
-            <motion.div 
+            <motion.div
               className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#5badff]/10 to-[#ff3d00]/10 blur-3xl"
               initial={{ y: 0, rotate: 0 }}
-              style={{ 
+              style={{
                 y: isLoading ? 0 : scrollY * -0.1,
                 rotate: isLoading ? 0 : scrollY * -0.05,
               }}
               transition={{ duration: 0.3 }}
             />
-            
+
             <motion.div
               className="flex justify-center mb-8"
               initial={{ scale: 0, opacity: 0 }}
               animate={heroRef.isInView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: isLoading ? 0.2 : 0.2 }}
             >
-              <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-gradient-to-r from-[#ff3d00] to-[#5badff]">                <motion.div 
-                  className="absolute inset-[3px] rounded-full overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Image 
-                    src="/me.jpeg" 
-                    alt="Soner Yeşilay" 
-                    width={154} 
-                    height={154} 
-                    className="object-cover" 
-                  />
-                </motion.div>
+              <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-gradient-to-r from-[#ff3d00] to-[#5badff]">                <motion.div
+                className="absolute inset-[3px] rounded-full overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Image
+                  src="/me.jpeg"
+                  alt="Soner Yeşilay"
+                  width={154}
+                  height={154}
+                  className="object-cover"
+                />
+              </motion.div>
               </div>
             </motion.div>
 
@@ -261,24 +261,24 @@ export default function Home() {
                 </span>
               </h1>
             </motion.div>
-            
-            <br/>
-            <motion.p 
+
+            <br />
+            <motion.p
               className="max-w-3xl mx-auto text-gray-400 dark:text-[#c5c5c5] mb-8 leading-relaxed"
               initial={{ y: 50, opacity: 0 }}
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: isLoading ? 0.5 : 0.6 }}
             >
-I'm a software developer who builds end-to-end products — from backend APIs to frontend UIs — with a strong focus on quality and maintainability. I also contribute on the QA side with solid test design and automation where it adds real value. Currently working as a Test Automation Engineer at Hugin Ödeme Sistemleri. Feel free to explore my GitHub and Medium profiles or get in touch!            </motion.p>
+              I'm a software developer who builds end-to-end products — from backend APIs to frontend UIs — with a strong focus on quality and maintainability. I also contribute on the QA side with solid test design and automation where it adds real value. Currently working as a Test Automation Engineer at Hugin Ödeme Sistemleri. Feel free to explore my GitHub and Medium profiles or get in touch!            </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex items-center justify-center space-x-4"
               initial={{ y: 50, opacity: 0 }}
               animate={heroRef.isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: isLoading ? 0.7 : 0.8 }}
             >
-              <motion.div 
-                whileHover={{ scale: 1.05 }} 
+              <motion.div
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="relative z-10"
               >
@@ -299,7 +299,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  href="https://drive.google.com/file/d/1ZD9iITg4uNc-vJelHdX9aUVx95EHmvMn/view"
+                  href="https://drive.google.com/file/d/11Rzih5rX-fPvLQMSKAJLquWUvvKEI71L/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 rounded-full border-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-[#191919] hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white transition-colors"
@@ -312,7 +312,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
 
           {/* Tech Stack */}
           <section id="tech" className="container mx-auto py-16 px-4 text-center" ref={techStackRef.ref}>
-            <motion.h2 
+            <motion.h2
               className="text-xl font-medium mb-10 text-gray-600 dark:text-[#8491a0]"
               initial={{ y: 50, opacity: 0 }}
               animate={techStackRef.isInView ? { y: 0, opacity: 1 } : {}}
@@ -320,7 +320,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
             >
               What I Build With
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="flex justify-center gap-10 flex-wrap"
               initial={{ y: 50, opacity: 0 }}
               animate={techStackRef.isInView ? { y: 0, opacity: 1 } : {}}
@@ -333,7 +333,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                 "Selenium",
                 "React"
               ].map((tech, index) => (
-                <motion.div 
+                <motion.div
                   key={tech}
                   className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text"
                   whileHover={{ scale: 1.2 }}
@@ -358,7 +358,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               <h2 className="relative text-center mb-16">
                 <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">PROJECTS</span>
                 <span className="relative text-3xl font-bold text-[#ff3d00]">MY PROJECTS</span>
-                <motion.div 
+                <motion.div
                   className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
                   initial={{ width: 0 }}
                   animate={projectsRef.isInView ? { width: 80 } : {}}
@@ -366,8 +366,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                 ></motion.div>
               </h2>
             </motion.div>
-            
-            <Carousel 
+
+            <Carousel
               opts={{
                 align: "start",
                 loop: true
@@ -401,13 +401,13 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                     image: "/projects/hotelmanagement.png",
                     accent: "#5badff",
                     github: "https://github.com/soneryesilay/Net-HotelApi-Project"
-                  },                  {
+                  }, {
                     title: "Portfolio Website",
                     subtitle: "FRONT-END PROJECT",
                     tech: "Built with Next.js and Tailwind CSS",
                     image: "https://i.hizliresim.com/b4tumam.png",
                     accent: "#ff3d00",
-                    github:"#",
+                    github: "#",
                   },
                   {
                     title: "Book Store Web API",
@@ -440,36 +440,36 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                     image: "/projects/zamanyonetimi.png",
                     accent: "#ff3d00", // You might want to change this accent color
                     github: "https://www.zamanyonetimi.com/"
-                  }                ].map((project, index) => (
-                  <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">                    <motion.div 
+                  }].map((project, index) => (
+                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">                    <motion.div
                       className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg transform mx-2 cursor-pointer"
-                      initial={{ 
-                        opacity: 0, 
+                      initial={{
+                        opacity: 0,
                         y: 50,
                         scale: 0.9
                       }}
-                      animate={projectsRef.isInView ? { 
-                        opacity: 1, 
+                      animate={projectsRef.isInView ? {
+                        opacity: 1,
                         y: 0,
                         scale: 1
                       } : {}}
-                      transition={{ 
-                        duration: 0.7, 
+                      transition={{
+                        duration: 0.7,
                         delay: index * 0.1 + 0.3,
                         ease: "easeOut"
                       }}
-                      whileHover={{ 
-                        scale: 1.03, 
+                      whileHover={{
+                        scale: 1.03,
                         y: -10,
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                         transition: { duration: 0.3, ease: "easeOut" }
                       }}
-                    >                      <Link 
-                        href={project.github} 
-                        target={project.github === "#" ? "_self" : "_blank"}
-                        onClick={project.github === "#" ? (e) => e.preventDefault() : undefined}
-                        className="block"
-                      >
+                    >                      <Link
+                      href={project.github}
+                      target={project.github === "#" ? "_self" : "_blank"}
+                      onClick={project.github === "#" ? (e) => e.preventDefault() : undefined}
+                      className="block"
+                    >
                         <div className="relative h-[280px] overflow-hidden">
                           <Image
                             src={project.image}
@@ -477,21 +477,21 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                             fill
                             className="object-cover"
                           />
-                          <motion.div 
+                          <motion.div
                             className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4"
                             initial={{ opacity: 0 }}
                             animate={projectsRef.isInView ? { opacity: 1 } : {}}
-                            transition={{ 
-                              duration: 0.5, 
+                            transition={{
+                              duration: 0.5,
                               delay: index * 0.1 + 0.7
                             }}
                           >
-                            <motion.h3 
+                            <motion.h3
                               className="text-lg font-bold text-white drop-shadow-md"
                               initial={{ y: 20, opacity: 0 }}
                               animate={projectsRef.isInView ? { y: 0, opacity: 1 } : {}}
-                              transition={{ 
-                                duration: 0.5, 
+                              transition={{
+                                duration: 0.5,
                                 delay: index * 0.1 + 0.8
                               }}
                             >
@@ -509,17 +509,17 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                         </div>
                       </Link>
                     </motion.div>
-                  </CarouselItem>
-                ))}
+                    </CarouselItem>
+                  ))}
               </CarouselContent>
-                <motion.div 
+              <motion.div
                 className="flex justify-center gap-4 mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={projectsRef.isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
-                <motion.div 
-                  whileHover={{ scale: 1.1 }} 
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ x: -20 }}
                   animate={projectsRef.isInView ? { x: 0 } : {}}
@@ -527,8 +527,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                 >
                   <CarouselPrevious className="static translate-y-0 mx-2" />
                 </motion.div>
-                <motion.div 
-                  whileHover={{ scale: 1.1 }} 
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ x: 20 }}
                   animate={projectsRef.isInView ? { x: 0 } : {}}
@@ -538,16 +538,16 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                 </motion.div>
               </motion.div>
             </Carousel>
-            
-            <motion.div 
+
+            <motion.div
               className="mt-10 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={projectsRef.isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
-                  href="https://github.com/soneryesilay?tab=repositories" 
+                <Link
+                  href="https://github.com/soneryesilay?tab=repositories"
                   target="_blank"
                   className="px-6 py-3 rounded-full border-2 border-[#ff3d00] text-[#ff3d00] hover:bg-[#ff3d00] hover:text-white transition-colors inline-flex items-center"
                 >
@@ -568,7 +568,7 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               <h2 className="relative text-center mb-16">
                 <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#5badff]">EXPERIENCE</span>
                 <span className="relative text-3xl font-bold text-[#5badff]">MY EXPERIENCE</span>
-                <motion.div 
+                <motion.div
                   className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
                   initial={{ width: 0 }}
                   animate={experienceRef.isInView ? { width: 80 } : {}}
@@ -579,28 +579,28 @@ I'm a software developer who builds end-to-end products — from backend APIs to
 
             <div className="max-w-3xl mx-auto space-y-12">
               {/* Experience 3 - Hugin Ödeme Sistemleri (Güncel iş - EN ÜSTTE) */}
-              <motion.div 
+              <motion.div
                 className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 group cursor-pointer"
                 initial={{ y: 50, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                whileHover={{ 
-                  scale: 1.03, 
+                whileHover={{
+                  scale: 1.03,
                   y: -10,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
                 <div className="flex-shrink-0">
-                  <motion.div 
+                  <motion.div
                     className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -2, 
-                      transition: { 
-                        duration: 0.15, 
+                    whileHover={{
+                      scale: 1.1,
+                      y: -2,
+                      transition: {
+                        duration: 0.15,
                         ease: "easeOut"
-                      } 
+                      }
                     }}
                   >
                     <span className="font-bold text-xl">3</span>
@@ -614,26 +614,26 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                   <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
                     Working as a full-time Test Automation Engineer at Hugin Ödeme Sistemleri in Istanbul. Developing and maintaining test automation frameworks, ensuring software quality through comprehensive testing strategies.
                   </p>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="mt-4 flex gap-2 flex-wrap"
                     initial={{ opacity: 0 }}
                     animate={experienceRef.isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
                     {["Test Automation", "Python", "Selenium", "Appium", "API Testing"].map((skill, index) => (
-                      <motion.span 
+                      <motion.span
                         key={skill}
                         className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
                         initial={{ opacity: 0, x: -20 }}
                         animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.7 }}
-                        whileHover={{ 
-                          scale: 1.1, 
-                          transition: { 
-                            duration: 0.1, 
+                        whileHover={{
+                          scale: 1.1,
+                          transition: {
+                            duration: 0.1,
                             ease: "easeOut"
-                          } 
+                          }
                         }}
                       >
                         {skill}
@@ -644,28 +644,28 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               </motion.div>
 
               {/* Experience 2 - AkademiQ.net (ORTADA) */}
-              <motion.div 
+              <motion.div
                 className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 group cursor-pointer"
                 initial={{ y: 50, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ 
-                  scale: 1.03, 
+                whileHover={{
+                  scale: 1.03,
                   y: -10,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
                 <div className="flex-shrink-0">
-                  <motion.div 
+                  <motion.div
                     className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -2, 
-                      transition: { 
-                        duration: 0.15, 
+                    whileHover={{
+                      scale: 1.1,
+                      y: -2,
+                      transition: {
+                        duration: 0.15,
                         ease: "easeOut"
-                      } 
+                      }
                     }}
                   >
                     <span className="font-bold text-xl">2</span>
@@ -679,26 +679,26 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                   <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
                     Accepted with a full scholarship to the C# Programming Introduction training camp organized by Acunmedya Akademi. Worked remotely on back-end development projects using C# and Rapid API.
                   </p>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="mt-4 flex gap-2 flex-wrap"
                     initial={{ opacity: 0 }}
                     animate={experienceRef.isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.8 }}
                   >
                     {["C#", "Rapid API", ".NET Core", "REST API"].map((skill, index) => (
-                      <motion.span 
+                      <motion.span
                         key={skill}
                         className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
                         initial={{ opacity: 0, x: -20 }}
                         animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.9 }}
-                        whileHover={{ 
-                          scale: 1.1, 
-                          transition: { 
-                            duration: 0.1, 
+                        whileHover={{
+                          scale: 1.1,
+                          transition: {
+                            duration: 0.1,
                             ease: "easeOut"
-                          } 
+                          }
                         }}
                       >
                         {skill}
@@ -709,28 +709,28 @@ I'm a software developer who builds end-to-end products — from backend APIs to
               </motion.div>
 
               {/* Experience 1 - AkıllıPhone (İlk iş - EN ALTTA) */}
-              <motion.div 
+              <motion.div
                 className="flex gap-6 bg-white dark:bg-[#1e1e1e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 group cursor-pointer"
                 initial={{ y: 50, opacity: 0 }}
                 animate={experienceRef.isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                whileHover={{ 
-                  scale: 1.03, 
+                whileHover={{
+                  scale: 1.03,
                   y: -10,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
                 <div className="flex-shrink-0">
-                  <motion.div 
+                  <motion.div
                     className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -2, 
-                      transition: { 
-                        duration: 0.15, 
+                    whileHover={{
+                      scale: 1.1,
+                      y: -2,
+                      transition: {
+                        duration: 0.15,
                         ease: "easeOut"
-                      } 
+                      }
                     }}
                   >
                     <span className="font-bold text-xl">1</span>
@@ -744,26 +744,26 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                   <p className="text-gray-700 dark:text-[#c5c5c5] mb-4">
                     Gained foundational knowledge of back-end development using .NET Core. Analyzed various applications to deepen my understanding and developed my own applications to apply and enhance my skills.
                   </p>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="mt-4 flex gap-2 flex-wrap"
                     initial={{ opacity: 0 }}
                     animate={experienceRef.isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 1.0 }}
                   >
                     {["Software Development Methodologies", ".NET Core", "C#", "MSSQL"].map((skill, index) => (
-                      <motion.span 
+                      <motion.span
                         key={skill}
                         className="px-3 py-1 bg-gray-200 dark:bg-[#222222] rounded-full text-xs font-medium cursor-default"
                         initial={{ opacity: 0, x: -20 }}
                         animate={experienceRef.isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.4, delay: index * 0.1 + 1.1 }}
-                        whileHover={{ 
-                          scale: 1.1, 
-                          transition: { 
-                            duration: 0.1, 
+                        whileHover={{
+                          scale: 1.1,
+                          transition: {
+                            duration: 0.1,
                             ease: "easeOut"
-                          } 
+                          }
                         }}
                       >
                         {skill}
@@ -775,49 +775,49 @@ I'm a software developer who builds end-to-end products — from backend APIs to
             </div>
           </section>
 
-            {/* Blog Section */}
-            <section id="blogs" className="container mx-auto py-16 px-4" ref={blogsRef.ref}>
+          {/* Blog Section */}
+          <section id="blogs" className="container mx-auto py-16 px-4" ref={blogsRef.ref}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={blogsRef.isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5 }}
             >
               <h2 className="relative text-center mb-16">
-              <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">BLOGS</span>
-              <span className="relative text-3xl font-bold text-[#ff3d00]">MY BLOGS</span>
-              <motion.div 
-                className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
-                initial={{ width: 0 }}
-                animate={blogsRef.isInView ? { width: 80 } : {}}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              ></motion.div>
+                <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">BLOGS</span>
+                <span className="relative text-3xl font-bold text-[#ff3d00]">MY BLOGS</span>
+                <motion.div
+                  className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
+                  initial={{ width: 0 }}
+                  animate={blogsRef.isInView ? { width: 80 } : {}}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                ></motion.div>
               </h2>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* JWT Authentication Blog Post */}              <motion.div 
-              className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
-              initial={{ opacity: 0, y: 50 }}
-              animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ 
-                scale: 1.03, 
-                y: -10,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                transition: { duration: 0.3, ease: "easeOut" }
-              }}
+              {/* JWT Authentication Blog Post */}              <motion.div
+                className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                initial={{ opacity: 0, y: 50 }}
+                animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{
+                  scale: 1.03,
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
               >
-                <Link 
-                  href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937" 
+                <Link
+                  href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937"
                   target="_blank"
                   className="block"
                 >
                   <div className="relative h-[200px] overflow-hidden">
                     <Image
-                    src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*AALox1K041nEYILxKsqcGg.jpeg"
-                    alt="JWT Authentication Blog"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*AALox1K041nEYILxKsqcGg.jpeg"
+                      alt="JWT Authentication Blog"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
@@ -825,44 +825,44 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                     <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blog</span>
                     <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">10 Adımda .NET Core 8.0 ile JWT Tabanlı Kimlik Doğrulama</h3>
                     <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                    ASP.NET Core 8.0 ile JWT tabanlı kimlik doğrulama sistemi oluşturma hakkında detaylı bir rehber. Adım adım uygulamalı örneklerle kimlik doğrulama sistemini nasıl kurabilirsiniz.
+                      ASP.NET Core 8.0 ile JWT tabanlı kimlik doğrulama sistemi oluşturma hakkında detaylı bir rehber. Adım adım uygulamalı örneklerle kimlik doğrulama sistemini nasıl kurabilirsiniz.
                     </p>
                   </div>
                 </Link>
                 <div className="px-8 pb-8 -mt-2">
-                  <motion.div 
-                  className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
-                  whileHover={{ x: 5 }} 
-                  transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
+                  <motion.div
+                    className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
                   >
-                  <Link 
-                    href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937" 
-                    target="_blank"
-                    className="inline-flex items-center"
-                  >
-                    Read on Medium
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
+                    <Link
+                      href="https://medium.com/@soneryesilay/10-ad%C4%B1mda-asp-net-core-8-0-ile-jwt-tabanl%C4%B1-kimlik-do%C4%9Frulama-sistemi-olu%C5%9Fturma-65c775614937"
+                      target="_blank"
+                      className="inline-flex items-center"
+                    >
+                      Read on Medium
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
                   </motion.div>
                 </div>
               </motion.div>
-              
-              {/* CRUD with .NET Core and React Blog Post */}              <motion.div 
+
+              {/* CRUD with .NET Core and React Blog Post */}              <motion.div
                 className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ 
-                  scale: 1.03, 
+                whileHover={{
+                  scale: 1.03,
                   y: -10,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
-                <Link 
-                  href="https://medium.com/@soneryesilay/net-core-8-0-ve-react-19-1-ile-crud-i%CC%87%C5%9Flemleri-f3ea8568e535" 
+                <Link
+                  href="https://medium.com/@soneryesilay/net-core-8-0-ve-react-19-1-ile-crud-i%CC%87%C5%9Flemleri-f3ea8568e535"
                   target="_blank"
                   className="block"
                 >
@@ -884,13 +884,13 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                   </div>
                 </Link>
                 <div className="px-8 pb-8 -mt-2">
-                  <motion.div 
+                  <motion.div
                     className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
-                    whileHover={{ x: 5 }} 
+                    whileHover={{ x: 5 }}
                     transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
                   >
-                    <Link 
-                      href="https://medium.com/@soneryesilay/net-core-8-0-ve-react-19-1-ile-crud-i%CC%87%C5%9Flemleri-f3ea8568e535" 
+                    <Link
+                      href="https://medium.com/@soneryesilay/net-core-8-0-ve-react-19-1-ile-crud-i%CC%87%C5%9Flemleri-f3ea8568e535"
                       target="_blank"
                       className="inline-flex items-center"
                     >
@@ -902,88 +902,88 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                   </motion.div>
                 </div>
               </motion.div>
-              
-              {/* Blog Post Placeholder */}              <motion.div 
+
+              {/* Blog Post Placeholder */}              <motion.div
                 className="bg-gray-100 dark:bg-[#222222] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                whileHover={{ 
-                scale: 1.03, 
-                y: -10,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                transition: { duration: 0.3, ease: "easeOut" }
+                whileHover={{
+                  scale: 1.03,
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >
-                <Link 
-                  href="https://medium.com/@soneryesilay" 
+                <Link
+                  href="https://medium.com/@soneryesilay"
                   target="_blank"
                   className="block"
                 >
                   <div className="relative h-[200px] overflow-hidden">
-                  <Image
-                    src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
-                    alt="Future Blog Post"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <Image
+                      src="https://webmasto.com/wp-content/uploads/2017/08/Medium-Logo-1024x536.png"
+                      alt="Future Blog Post"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
                   <div className="p-8">
-                  <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
-                  <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
-                    More technical tutorials and articles coming soon on my Medium profile.
-                  </p>
+                    <span className="text-xs font-medium text-gray-500 dark:text-[#8491a0] mb-3 block">Medium Blogs</span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#5badff] transition-colors duration-300">Soon</h3>
+                    <p className="text-gray-700 dark:text-[#c5c5c5] mb-6 line-clamp-3">
+                      More technical tutorials and articles coming soon on my Medium profile.
+                    </p>
                   </div>
                 </Link>
                 <div className="px-8 pb-8 -mt-2">
-                  <motion.div 
+                  <motion.div
                     className="inline-flex items-center font-medium text-[#5badff] group-hover:text-[#3d90e3] transition-colors duration-300"
-                    whileHover={{ x: 5 }} 
+                    whileHover={{ x: 5 }}
                     transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
                   >
-                    <Link 
-                    href="https://medium.com/@soneryesilay" 
-                    target="_blank"
-                    className="inline-flex items-center"
+                    <Link
+                      href="https://medium.com/@soneryesilay"
+                      target="_blank"
+                      className="inline-flex items-center"
                     >
-                    Read on Medium
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                      Read on Medium
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
                     </Link>
                   </motion.div>
                 </div>
               </motion.div>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               className="mt-10 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={blogsRef.isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 1 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="https://medium.com/@soneryesilay" 
-                target="_blank"
-                className="px-6 py-3 rounded-full border-2 border-[#5badff] text-[#5badff] hover:bg-[#5badff] hover:text-white transition-colors inline-flex items-center"
-              >
-                View All Blog Posts
-                <svg viewBox="0 0 1043.63 592.71" className="w-5 h-5 ml-2 fill-current">
-                <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460.03 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
-                </svg>
-              </Link>
+                <Link
+                  href="https://medium.com/@soneryesilay"
+                  target="_blank"
+                  className="px-6 py-3 rounded-full border-2 border-[#5badff] text-[#5badff] hover:bg-[#5badff] hover:text-white transition-colors inline-flex items-center"
+                >
+                  View All Blog Posts
+                  <svg viewBox="0 0 1043.63 592.71" className="w-5 h-5 ml-2 fill-current">
+                    <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460.03 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
+                  </svg>
+                </Link>
               </motion.div>
             </motion.div>
-            </section>
+          </section>
 
           {/* Contact Section - Responsive to Theme */}
           <section id="contact" className="bg-white dark:bg-[#191919] py-10 mt-16 border-t border-gray-200 dark:border-gray-800" ref={contactRef.ref}>
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto">
-                <motion.h2 
+                <motion.h2
                   className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={contactRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -991,8 +991,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                 >
                   Contact Me
                 </motion.h2>
-                
-                <motion.div 
+
+                <motion.div
                   className="flex items-center justify-center mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={contactRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -1007,8 +1007,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                     </span>
                   </div>
                 </motion.div>
-                
-                <motion.p 
+
+                <motion.p
                   className="text-gray-400 dark:text-gray-300 mb-6 text-center max-w-2xl mx-auto"
                   initial={{ opacity: 0, y: 20 }}
                   animate={contactRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -1016,14 +1016,14 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                 >
                   Have a question or interested in working together? Feel free to reach out! I'm always open to discussing new projects, opportunities, or simply connecting with fellow developers. Let's build something great together!
                 </motion.p>
-                
-                <motion.div 
+
+                <motion.div
                   className="flex items-center justify-center mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={contactRef.isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="flex items-center"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -1036,8 +1036,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                     </a>
                   </motion.div>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="flex justify-center space-x-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={contactRef.isInView ? { opacity: 1, y: 0 } : {}}
@@ -1073,8 +1073,8 @@ I'm a software developer who builds end-to-end products — from backend APIs to
                     </Link>
                   </motion.div>
                 </motion.div>
-                
-                <motion.p 
+
+                <motion.p
                   className="mt-6 text-gray-500 dark:text-gray-500 text-sm text-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={contactRef.isInView ? { opacity: 1, y: 0 } : {}}
