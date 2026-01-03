@@ -178,7 +178,7 @@ export default function Home() {
                 }}
               >
                   {item.label}
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-[#ff3d00] to-[#5badff] transform scale-x-0 transition-transform group-hover:scale-x-100" />
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[#5badff] transform scale-x-0 transition-transform group-hover:scale-x-100" />
                 </Link>
               </motion.div>
             ))}
@@ -193,7 +193,7 @@ export default function Home() {
           {/* Hero Section */}
           <section id="hero" className="container mx-auto py-16 px-4 text-center relative overflow-hidden" ref={heroRef.ref}>            {/* Parallax background elements */}
             <motion.div
-              className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#ff3d00]/10 to-[#5badff]/10 blur-3xl"
+              className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5badff]/5 blur-3xl"
               initial={{ y: 0, rotate: 0 }}
               style={{
                 y: isLoading ? 0 : scrollY * 0.2,
@@ -202,7 +202,7 @@ export default function Home() {
               transition={{ duration: 0.3 }}
             />
             <motion.div
-              className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-gradient-to-r from-[#5badff]/10 to-[#ff3d00]/10 blur-3xl"
+              className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-gray-500/5 blur-3xl"
               initial={{ y: 0, rotate: 0 }}
               style={{
                 y: isLoading ? 0 : scrollY * -0.1,
@@ -217,7 +217,7 @@ export default function Home() {
               animate={heroRef.isInView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: isLoading ? 0.2 : 0.2 }}
             >
-              <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-gradient-to-r from-[#ff3d00] to-[#5badff]">                <motion.div
+              <div className="relative w-[160px] h-[160px] rounded-full overflow-hidden bg-[#5badff]">                <motion.div
                 className="absolute inset-[3px] rounded-full overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
@@ -241,7 +241,7 @@ export default function Home() {
               <h1 className="text-5xl font-bold mb-4">
                 Soner Yeşilay
                 <br />
-                <span className="bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text">
+                <span className="text-[#5badff]">
                   <TypeAnimation
                     sequence={[
                       'Software Dev.',
@@ -335,7 +335,7 @@ export default function Home() {
               ].map((tech, index) => (
                 <motion.div
                   key={tech}
-                  className="text-xl font-bold bg-gradient-to-r from-[#ff3d00] to-[#5badff] text-transparent bg-clip-text"
+                  className="text-xl font-bold text-[#5badff]"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -359,7 +359,7 @@ export default function Home() {
                 <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">PROJECTS</span>
                 <span className="relative text-3xl font-bold text-[#ff3d00]">MY PROJECTS</span>
                 <motion.div
-                  className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
+                  className="h-1 w-20 bg-[#ff3d00] mx-auto mt-4"
                   initial={{ width: 0 }}
                   animate={projectsRef.isInView ? { width: 80 } : {}}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -569,7 +569,7 @@ export default function Home() {
                 <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#5badff]">EXPERIENCE</span>
                 <span className="relative text-3xl font-bold text-[#5badff]">MY EXPERIENCE</span>
                 <motion.div
-                  className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
+                  className="h-1 w-20 bg-[#5badff] mx-auto mt-4"
                   initial={{ width: 0 }}
                   animate={experienceRef.isInView ? { width: 80 } : {}}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -593,7 +593,7 @@ export default function Home() {
               >
                 <div className="flex-shrink-0">
                   <motion.div
-                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-[#5badff] rounded-lg text-white shadow-md"
                     whileHover={{
                       scale: 1.1,
                       y: -2,
@@ -658,7 +658,7 @@ export default function Home() {
               >
                 <div className="flex-shrink-0">
                   <motion.div
-                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-[#5badff] rounded-lg text-white shadow-md"
                     whileHover={{
                       scale: 1.1,
                       y: -2,
@@ -723,7 +723,7 @@ export default function Home() {
               >
                 <div className="flex-shrink-0">
                   <motion.div
-                    className="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-r from-[#ff3d00] to-[#5badff] rounded-lg text-white shadow-md"
+                    className="w-[50px] h-[50px] flex items-center justify-center bg-[#5badff] rounded-lg text-white shadow-md"
                     whileHover={{
                       scale: 1.1,
                       y: -2,
@@ -786,7 +786,7 @@ export default function Home() {
                 <span className="absolute inset-x-0 bottom-0 transform translate-y-6 scale-75 opacity-20 text-6xl font-extrabold text-[#ff3d00]">BLOGS</span>
                 <span className="relative text-3xl font-bold text-[#ff3d00]">MY BLOGS</span>
                 <motion.div
-                  className="h-1 w-20 bg-gradient-to-r from-[#ff3d00] to-[#5badff] mx-auto mt-4"
+                  className="h-1 w-20 bg-[#ff3d00] mx-auto mt-4"
                   initial={{ width: 0 }}
                   animate={blogsRef.isInView ? { width: 80 } : {}}
                   transition={{ duration: 0.8, delay: 0.3 }}

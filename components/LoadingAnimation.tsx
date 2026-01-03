@@ -16,14 +16,9 @@ export const LoadingAnimation = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
-        {/* Classic spinner with gradient */}
+        {/* Classic spinner */}
         <motion.div
-          className="w-16 h-16 border-t-4 border-l-4 border-r-4 border-b-4 border-b-transparent rounded-full"
-          style={{ 
-            borderTopColor: '#ff3d00',
-            borderLeftColor: '#b27aff',
-            borderRightColor: '#5badff',
-          }}
+          className="w-16 h-16 border-t-4 border-l-4 border-r-4 border-b-4 border-b-transparent rounded-full border-[#5badff]"
           animate={{ rotate: 360 }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
         />

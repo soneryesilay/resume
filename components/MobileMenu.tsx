@@ -87,7 +87,7 @@ export default function MobileMenu() {
                     className="text-xl font-medium text-gray-800 dark:text-white hover:text-[#5badff] dark:hover:text-[#5badff] transition-colors relative inline-block"
                   >
                     {item.label}
-                    <div className="absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-[#ff3d00] to-[#5badff] transform scale-x-0 hover:scale-x-100 transition-transform duration-300" />
+                    <div className="absolute left-0 right-0 bottom-0 h-0.5 bg-[#5badff] transform scale-x-0 hover:scale-x-100 transition-transform duration-300" />
                   </Link>
                 </motion.div>
               ))}
